@@ -15,6 +15,19 @@
     }, { threshold: 0.12 }).observe(booking);
   }
 
+  // Award logos: until a PNG is uploaded to assets/logos/, gracefully fall back
+  // to the text wordmark, so a missing file never shows a broken image.
+  document.querySelectorAll('#awards img.logo[data-fallback]').forEach(function (img) {
+    var fb = function () {
+      var span = document.createElement('span');
+      span.className = 'logo-ph';
+      span.textContent = img.getAttribute('data-fallback');
+      img.replaceWith(span);
+    };
+    img.addEventListener('error', fb);
+    if (img.complete && img.naturalWidth === 0) fb();
+  });
+
   // In-page anchor links: smooth-scroll WITHOUT changing location.hash.
   // The homereserve booking widget re-mounts on every hashchange and blanks out,
   // so any click on #o-nas / #booking / … would wipe it. We scroll by JS instead
