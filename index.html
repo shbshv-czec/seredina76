@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Середина — домики для отдыха под Ярославлем</title>
+<meta name="description" content="«Середина» — два участка с домиками для короткого отдыха в 10 км от Ярославля. Сауна, мангальная зона, тишина и природа. Приезжайте выдохнуть.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="site.css">
+<script src="./image-slot.js" defer></script>
+</head>
+<body>
+
+<div class="topbar" id="topbar">
+<!-- Announcement -->
+<div class="announce" id="announce">
+  <span>До Волги — 5 минут, до Ярославля — 15. Забронируйте участок целиком и будьте только вдвоём с природой.</span>
+  <a class="cta" href="#domiki">Выбрать домик <span aria-hidden="true">→</span></a>
+  <button class="x" id="announceX" aria-label="Закрыть">×</button>
+</div>
+
+<!-- Nav -->
+<header class="site-header" id="siteHeader">
+  <div class="container">
+    <nav class="nav" id="nav">
+      <a href="#top" aria-label="Середина"><img class="logo" src="../assets/seredina-logo.png" alt="Середина"></a>
+      <div class="nav-links">
+        <a href="#o-nas">О нас</a>
+        <a href="#domiki">Домики</a>
+        <a href="#territoriya">Территория</a>
+        <a href="#pravila">Правила проживания</a>
+        <a href="#otzyvy">Отзывы</a>
+        <a href="#lokatsiya">Локация</a>
+      </div>
+      <div class="nav-actions">
+        <a class="btn btn-dark" href="#booking">Забронировать</a>
+        <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+</div><!-- /topbar -->
+
+<!-- Hero -->
+<section class="hero container" id="top">
+  <h1 class="h-hero hero-head reveal">Остановитесь <br><span class="pine">на середине</span></h1>
+  <p class="lead hero-sub reveal d1">Домики для отдыха в 10 км от Ярославля. <br>Без долгой дороги и сложных планов — просто приехать, <br>выдохнуть и прийти в себя.</p>
+  <div class="hero-media reveal d2">
+    <div class="frame tall"><img src="assets/hero-terrace.jpg" alt="Терраса и зона отдыха на участке"></div>
+    <div class="frame short"><img src="assets/hero-bed.jpg" alt="Спальня в домике"></div>
+  </div>
+</section>
+
+<!-- Booking bar -->
+<section class="container" id="booking">
+  <div class="hr-widget-block reveal">
+    <div id="hr-widget"></div>
+  </div>
+</section>
+
+<!-- About / concept -->
+<section class="band container" id="o-nas">
+  <div class="sec-head reveal">
+    <div class="eyebrow">О «Середине»</div>
+    <h2 class="h2">Есть минус. Есть плюс.<br>А между ними — середина.</h2>
+  </div>
+  <div class="about-intro reveal d1">
+    <div class="about-text">
+      <div class="about-body"><p>Меня зовут Мария, и я создатель домиков для отдыха «Середина». Мы создавали их как место, где можно за короткое время отдохнуть, восстановиться и прийти в себя.</p><p>Я верю, что отдых — это не награда за усталость, а основа полноценной жизни.</p><p>Мы создаём место для времени с близкими и друзьями, с заботой о деталях, высоким уровнем сервиса и атмосферой уюта.</p></div>
+      <blockquote class="pullquote">Есть «плюс» — когда мы активны, полны сил и энергии, много делаем, двигаемся вперёд. Есть «минус» — когда сил уже не осталось. А между ними есть ноль — <mark>та самая середина</mark>. Место для паузы и выдоха.</blockquote>
+    </div>
+    <div class="about-photo"><img src="../assets/maria.jpg" alt="Мария — создатель домиков «Середина»" loading="lazy" decoding="async" width="683" height="1024"></div>
+  </div>
+  <p class="about-cta-line">Приезжайте в <span class="hl" style="background:#fcbd1c;color:#23212c">«Середину»</span>. Остановитесь, наберитесь сил — и продолжайте жить свою яркую и наполненную жизнь.</p>
+  <div class="awards reveal d1">
+    <div class="award"><div class="mid"><img class="logo" src="assets/logos/avito.png" alt="Авито"><span class="divx"></span><div class="rcol"><span class="stars">★★★★★</span><span class="rline"><b>4,9</b> · 1200+ отзывов</span></div></div></div>
+    <div class="award"><div class="mid"><span class="logo-ph">Яндекс.Карты</span><span class="divx"></span><div class="rcol"><span class="stars">★★★★★</span><span class="rline"><b>4,4</b> · 340+ отзывов</span></div></div></div>
+    <div class="award"><div class="mid"><span class="logo-ph">Суточно</span><span class="divx"></span><div class="rcol"><span class="stars">★★★★★</span><span class="rline"><b>4,8</b> · 210+ отзывов</span></div></div></div>
+    <div class="award"><div class="mid"><span class="logo-ph">Циан</span><span class="divx"></span><div class="rcol"><span class="stars">★★★★★</span><span class="rline"><b>5,5</b> · 90+ отзывов</span></div></div></div>
+    <div class="award"><div class="mid"><span class="logo-ph">Островок</span><span class="divx"></span><div class="rcol"><span class="stars">★★★★★</span><span class="rline"><b>4,9</b> · 150+ отзывов</span></div></div></div>
+  </div>
+</section>
+
+<!-- Domiki -->
+<section class="band container" id="domiki">
+  <div class="sec-head reveal" style="max-width:none">
+    <div class="eyebrow">Два участка</div>
+    <h2 class="h2">Выберите свою середину</h2>
+    <div class="domiki-intro">
+      <p>У нас два участка — «Выдох» и «Пауза». <strong>Каждый из них сдаётся целиком только одной компании.</strong></p>
+      <p>На каждом участке по два домика. Один домик — это кухня-гостиная с сауной и санузлом, второй — спальня.</p>
+    </div>
+  </div>
+  <div class="plots">
+    <!-- Выдох -->
+    <article class="plot reveal">
+      <div class="plot-media"><div class="simple-gal" data-gal><div class="sg-track"><div class="sg-slide"><img src="assets/plot-vydoh.jpg" alt="Домик «Выдох»"></div><div class="sg-slide"><image-slot id="vydoh-2" shape="rect" placeholder="Выдох — фото 2"></image-slot></div><div class="sg-slide"><image-slot id="vydoh-3" shape="rect" placeholder="Выдох — фото 3"></image-slot></div><div class="sg-slide"><image-slot id="vydoh-4" shape="rect" placeholder="Выдох — фото 4"></image-slot></div><div class="sg-slide"><image-slot id="vydoh-5" shape="rect" placeholder="Выдох — фото 5"></image-slot></div><div class="sg-slide"><image-slot id="vydoh-6" shape="rect" placeholder="Выдох — фото 6"></image-slot></div><div class="sg-slide"><image-slot id="vydoh-7" shape="rect" placeholder="Выдох — фото 7"></image-slot></div><div class="sg-slide"><image-slot id="vydoh-8" shape="rect" placeholder="Выдох — фото 8"></image-slot></div><div class="sg-slide"><image-slot id="vydoh-9" shape="rect" placeholder="Выдох — фото 9"></image-slot></div><div class="sg-slide"><image-slot id="vydoh-10" shape="rect" placeholder="Выдох — фото 10"></image-slot></div></div><div class="sg-arrows"><button type="button" data-sg-prev aria-label="Назад">←</button><button type="button" data-sg-next aria-label="Вперёд">→</button></div></div></div>
+      <div class="plot-content">
+        <h3 class="plot-name">Участок «Выдох»</h3>
+        <p class="plot-tagline">Для компании</p>
+        <div class="plot-meta"><span class="pm-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="3.5"/><path d="M22 20v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.5a4 4 0 0 1 0 7"/></svg>До 4 человек</span><span class="pm-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg>2 домика</span></div>
+        <p class="plot-short">«Выдох» отлично подойдёт для семейного отдыха, двух пар или небольшой компании друзей — когда хочется много времени проводить вместе, готовить, сидеть за большим столом, ходить в сауну и устраивать долгие вечера на веранде.</p>
+        <div class="plot-details">
+          <p class="body muted">«Выдох» — более просторный из наших двух участков. Здесь большая веранда, где можно собраться всей компанией за одним столом, просторная мангальная зона со столом и лавками и сауна на 2–3 человек.</p>
+          <p class="body muted">А ещё здесь два душа — особенно удобно, если вы приезжаете вчетвером или семьёй с детьми.</p>
+        </div>
+        <div class="plot-actions">
+          <button class="btn btn-ghost plot-toggle" type="button" data-plot-toggle>Подробнее о домике <span class="arw" aria-hidden="true">↓</span></button>
+          <a class="btn btn-dark" href="#booking">Забронировать «Выдох»</a>
+        </div>
+      </div>
+    </article>
+    <!-- Пауза -->
+    <article class="plot reveal">
+      <div class="plot-media"><div class="simple-gal" data-gal><div class="sg-track"><div class="sg-slide"><img src="assets/plot-pauza.jpg" alt="Домик «Пауза»"></div><div class="sg-slide"><image-slot id="pauza-2" shape="rect" placeholder="Пауза — фото 2"></image-slot></div><div class="sg-slide"><image-slot id="pauza-3" shape="rect" placeholder="Пауза — фото 3"></image-slot></div><div class="sg-slide"><image-slot id="pauza-4" shape="rect" placeholder="Пауза — фото 4"></image-slot></div><div class="sg-slide"><image-slot id="pauza-5" shape="rect" placeholder="Пауза — фото 5"></image-slot></div><div class="sg-slide"><image-slot id="pauza-6" shape="rect" placeholder="Пауза — фото 6"></image-slot></div><div class="sg-slide"><image-slot id="pauza-7" shape="rect" placeholder="Пауза — фото 7"></image-slot></div><div class="sg-slide"><image-slot id="pauza-8" shape="rect" placeholder="Пауза — фото 8"></image-slot></div><div class="sg-slide"><image-slot id="pauza-9" shape="rect" placeholder="Пауза — фото 9"></image-slot></div><div class="sg-slide"><image-slot id="pauza-10" shape="rect" placeholder="Пауза — фото 10"></image-slot></div></div><div class="sg-arrows"><button type="button" data-sg-prev aria-label="Назад">←</button><button type="button" data-sg-next aria-label="Вперёд">→</button></div></div></div>
+      <div class="plot-content">
+        <h3 class="plot-name">Участок «Пауза»</h3>
+        <p class="plot-tagline">Для пары или небольшой семьи</p>
+        <div class="plot-meta"><span class="pm-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="3.5"/><path d="M22 20v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.5a4 4 0 0 1 0 7"/></svg>До 4 человек</span><span class="pm-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg>2 домика</span></div>
+        <p class="plot-short">«Пауза» — более тихий и уединённый участок. Он отлично подойдёт для пары или небольшой семьи — особенно если вам не нужны большие застолья, а хочется больше тишины, солнца, воздуха и своего пространства вокруг.</p>
+        <div class="plot-details">
+          <p class="body muted">Здесь много солнца и больше открытого пространства с травой — можно лежать на пледе, играть с детьми, бегать босиком или просто проводить время на улице.</p>
+          <p class="body muted">Сама зона отдыха здесь более камерная: небольшая веранда, мангальная зона на четверых и маленькая сауна, в которой особенно комфортно вдвоём.</p>
+        </div>
+        <div class="plot-actions">
+          <button class="btn btn-ghost plot-toggle" type="button" data-plot-toggle>Подробнее о домике <span class="arw" aria-hidden="true">↓</span></button>
+          <a class="btn btn-dark" href="#booking">Забронировать «Паузу»</a>
+        </div>
+      </div>
+    </article>
+  </div>
+  <div class="spec reveal d1">
+    <p class="spec-intro" hidden></p>
+    <div class="spec-head"><span></span><span class="sp">Выдох</span><span class="sp">Пауза</span></div>
+    <div class="spec-body">
+      <div class="spec-row"><span class="spec-feat"><i data-lucide="flame"></i>Сауна</span><span class="spec-val">2–3 чел.</span><span class="spec-val">1–2 чел.</span></div>
+      <div class="spec-row"><span class="spec-feat"><i data-lucide="shower-head"></i>Душ</span><span class="spec-val">2</span><span class="spec-val">1</span></div>
+      <div class="spec-row"><span class="spec-feat"><i data-lucide="armchair"></i>Веранда</span><span class="spec-val">большая</span><span class="spec-val yes"><i data-lucide="check"></i></span></div>
+      <div class="spec-row"><span class="spec-feat"><i data-lucide="utensils-crossed"></i>Мангальная зона</span><span class="spec-val">со столом и&nbsp;лавками</span><span class="spec-val yes"><i data-lucide="check"></i></span></div>
+      <div class="spec-row"><span class="spec-feat"><i data-lucide="trees"></i>Качели</span><span class="spec-val yes"><i data-lucide="check"></i></span><span class="spec-val no">—</span></div>
+      <div class="spec-row"><span class="spec-feat"><i data-lucide="target"></i>Дартс</span><span class="spec-val yes"><i data-lucide="check"></i></span><span class="spec-val yes"><i data-lucide="check"></i></span></div>
+      <div class="spec-row"><span class="spec-feat"><i data-lucide="tv"></i>Телевизор</span><span class="spec-val yes"><i data-lucide="check"></i></span><span class="spec-val yes"><i data-lucide="check"></i></span></div>
+      <div class="spec-row"><span class="spec-feat"><i data-lucide="speaker"></i>Яндекс Станция с Алисой</span><span class="spec-val yes"><i data-lucide="check"></i></span><span class="spec-val yes"><i data-lucide="check"></i></span></div>
+      <div class="spec-row"><span class="spec-feat"><i data-lucide="wifi"></i>Wi-Fi</span><span class="spec-val yes"><i data-lucide="check"></i></span><span class="spec-val yes"><i data-lucide="check"></i></span></div>
+    </div>
+    <hr class="spec-rule">
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="band container" id="galereya">
+  <div class="sec-head split reveal">
+    <div class="sh-l">
+      <div class="eyebrow">Галерея</div>
+      <h2 class="h2">Внутри домиков</h2>
+    </div>
+    <p class="lead">Листайте стрелками или свайпом — фото в центре, описание под ним. Заглушки заменятся вашими фотографиями.</p>
+  </div>
+  <div class="gallery reveal d1" data-gallery id="gallery">
+    <div class="gal-viewport">
+      <button class="gal-arrow" data-prev type="button" aria-label="Назад">←</button>
+      <div class="gal-frame">
+        <figure class="gslide active"><img src="assets/gal-spalnya.jpg" alt="Спальня"></figure>
+        <figure class="gslide"><img src="assets/gal-gostinaya.jpg" alt="Гостиная"></figure>
+        <figure class="gslide"><img src="assets/gal-kuhnya.jpg" alt="Кухня"></figure>
+        <figure class="gslide"><image-slot id="gal-4" shape="rect" placeholder="Санузел"></image-slot></figure>
+        <figure class="gslide"><image-slot id="gal-5" shape="rect" placeholder="Тёплый пол"></image-slot></figure>
+        <figure class="gslide"><image-slot id="gal-6" shape="rect" placeholder="Приятные мелочи"></image-slot></figure>
+      </div>
+      <button class="gal-arrow" data-next type="button" aria-label="Вперёд">→</button>
+    </div>
+    <div class="gal-caps">
+      <div class="gcap active"><h3 class="gcap-t">Спальня</h3><p class="gcap-d">Отдельный домик-спальня: двуспальная кровать с матрасом Аскона, белоснежное бельё и мягкие подушки. Blackout-шторы для глубокого сна и свой санузел рядом.</p></div>
+      <div class="gcap"><h3 class="gcap-t">Гостиная</h3><p class="gcap-d">Кухня-гостиная с большим столом: готовить, собираться всей компанией, смотреть телевизор или играть в настольные игры. Диван раскладывается в полноценное спальное место, есть Wi-Fi и колонка с Алисой.</p></div>
+      <div class="gcap"><h3 class="gcap-t">Кухня</h3><p class="gcap-d">Всё для быта как дома: холодильник, плита, микроволновка, чайник и посуда. А на утро с дороги оставлены чай и кофе.</p></div>
+      <div class="gcap"><h3 class="gcap-t">Санузел</h3><p class="gcap-d">В каждом домике свой санузел с душем и тёплым полом. На участке «Выдох» их два — удобно приезжать вчетвером или семьёй с детьми.</p></div>
+      <div class="gcap"><h3 class="gcap-t">Тёплый пол</h3><p class="gcap-d">Тёплые полы и blackout-шторы делают домики уютными в любое время года — тепло возвращаться с прогулки и спокойно спится даже светлым утром.</p></div>
+      <div class="gcap"><h3 class="gcap-t">Приятные мелочи</h3><p class="gcap-d">Детали, которые делают отдых уютным: матрас Аскона и мягкое бельё, свежие полотенца, пледы и банные принадлежности на уровне отеля, чай и кофе с дороги, настольные игры, колонка с Алисой и коробочка со всем нужным на непредвиденные случаи.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Territory -->
+<section class="band container" id="territoriya">
+  <div class="sec-head split reveal">
+    <div class="sh-l">
+      <div class="eyebrow">Территория</div>
+      <h2 class="h2">Весь участок — только ваш</h2>
+    </div>
+    <p class="lead">Во время отдыха других гостей на территории не будет. А рядом — Волга: примерно в пяти минутах езды пляж, неподалёку — «Яр-Байкал».</p>
+  </div>
+  <div class="gallery reveal d1" data-gallery>
+    <div class="gal-viewport">
+      <button class="gal-arrow" data-prev type="button" aria-label="Назад">←</button>
+      <div class="gal-frame">
+        <figure class="gslide active"><img src="assets/ter-veranda.jpg" alt="Веранда"></figure>
+        <figure class="gslide"><img src="assets/ter-mangal.jpg" alt="Мангальная зона"></figure>
+        <figure class="gslide"><img src="assets/ter-sauna.jpg" alt="Сауна"></figure>
+        <figure class="gslide"><img src="assets/ter-darts.jpg" alt="Игры"></figure>
+        <figure class="gslide"><image-slot id="ter-5" shape="rect" placeholder="Двор и трава"></image-slot></figure>
+        <figure class="gslide"><image-slot id="ter-6" shape="rect" placeholder="Тишина деревни"></image-slot></figure>
+      </div>
+      <button class="gal-arrow" data-next type="button" aria-label="Вперёд">→</button>
+    </div>
+    <div class="gal-caps">
+      <div class="gcap active"><h3 class="gcap-t">Веранда</h3><p class="gcap-d">Уютная веранда со столом и креслами, гирлянды и атмосфера загородного вечера: завтракать на свежем воздухе, пить утренний кофе и никуда не торопиться.</p></div>
+      <div class="gcap"><h3 class="gcap-t">Мангальная зона</h3><p class="gcap-d">Своя зона для готовки на огне со столом и лавками — обеды и долгие ужины на улице.</p></div>
+      <div class="gcap"><h3 class="gcap-t">Сауна</h3><p class="gcap-d">Своя сауна с мягким комфортным прогревом — входит в стоимость. Разогревается около 1,5 часа: напишите заранее, и мы включим её к вашему приезду.</p></div>
+      <div class="gcap"><h3 class="gcap-t">Игры</h3><p class="gcap-d">Качели, дартс и уличные активности — есть чем заняться на свежем воздухе всей компанией.</p></div>
+      <div class="gcap"><h3 class="gcap-t">Двор и трава</h3><p class="gcap-d">Открытое пространство с травой: лежать на пледе, играть с детьми или бегать босиком.</p></div>
+      <div class="gcap"><h3 class="gcap-t">Тишина деревни</h3><p class="gcap-d">Настоящая тишина: мобильной связи почти нет, зато есть Wi-Fi. Рядом лес, поле и карьеры — а до магазинов недалеко.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Rules -->
+<section class="band-tight container" id="pravila">
+  <div class="sec-head split reveal">
+    <div class="sh-l">
+      <div class="eyebrow">Правила проживания</div>
+      <h2 class="h2">Несколько простых правил</h2>
+    </div>
+    <p class="lead">Чтобы отдых в «Середине» был комфортным для вас, следующих гостей и наших соседей.</p>
+  </div>
+  <div class="acc reveal d1" data-acc>
+    <div class="acc-row"><button class="head"><span class="t">Заезд и выезд</span><span class="pm" aria-hidden="true">+</span></button><div class="panel"><div class="inner">Заезд — с 14:00. Выезд — до 12:00. Заселение и выселение бесконтактные — приехать можно в любое удобное время. Мария всегда на связи и оперативно отвечает на вопросы.</div></div></div>
+    <div class="acc-row"><button class="head"><span class="t">Количество гостей</span><span class="pm" aria-hidden="true">+</span></button><div class="panel"><div class="inner">Каждый участок рассчитан на комфортное размещение до 4 человек. Если гостей будет больше — пожалуйста, согласуйте это с нами заранее.</div></div></div>
+    <div class="acc-row"><button class="head"><span class="t">Залог</span><span class="pm" aria-hidden="true">+</span></button><div class="panel"><div class="inner">При заселении вносится возвратный залог. После выезда мы проверяем домики и возвращаем его в течение 24 часов при отсутствии повреждений и нарушений правил.</div></div></div>
+    <div class="acc-row"><button class="head"><span class="t">Тишина</span><span class="pm" aria-hidden="true">+</span></button><div class="panel"><div class="inner">Домики находятся в настоящей жилой деревне, поэтому просим уважать соседей и соблюдать тишину вечером и ночью. Громкие вечеринки и мероприятия проводить нельзя.</div></div></div>
+    <div class="acc-row"><button class="head"><span class="t">Домашние животные</span><span class="pm" aria-hidden="true">+</span></button><div class="panel"><div class="inner">Мы рады гостям с питомцами. Проживание необходимо согласовать заранее, доплата за питомца — 1 000 ₽ за весь период проживания.</div></div></div>
+    <div class="acc-row"><button class="head"><span class="t">Курение</span><span class="pm" aria-hidden="true">+</span></button><div class="panel"><div class="inner">Внутри домиков и сауны курить нельзя. На улице — пожалуйста, только с соблюдением правил пожарной безопасности.</div></div></div>
+    <div class="acc-row"><button class="head"><span class="t">Огонь и безопасность</span><span class="pm" aria-hidden="true">+</span></button><div class="panel"><div class="inner">На территории запрещены пиротехника, фейерверки, петарды и бенгальские огни. Открытый огонь можно разводить только в предназначенной для этого мангальной зоне.</div></div></div>
+    <div class="acc-row"><button class="head"><span class="t">Бережное отношение</span><span class="pm" aria-hidden="true">+</span></button><div class="panel"><div class="inner">Пожалуйста, относитесь к домикам, мебели, технике и территории бережно. Если что-то случайно сломалось — просто сообщите нам об этом.</div></div></div>
+  </div>
+</section>
+<!-- Reviews -->
+<section class="band container" id="otzyvy">
+  <div class="reviews-head">
+    <div class="reveal" style="margin-bottom:0">
+      <div class="eyebrow">Отзывы гостей</div>
+      <h2 class="h2">Сюда хочется<br>вернуться</h2>
+      <div class="rating-strip">
+        <div class="r"><span class="st">★</span><b>4,8</b>&nbsp;·&nbsp;Авито</div>
+        <div class="r"><span class="st">★</span><b>4,8</b>&nbsp;·&nbsp;Суточно</div>
+        <div class="r"><span class="st">★</span><b>4,8</b>&nbsp;·&nbsp;Циан</div>
+        <div class="r"><span class="st">★</span><b>4,8</b>&nbsp;·&nbsp;Островок</div>
+      </div>
+    </div>
+    <div class="rev-nav reveal d1"><button data-rev-prev aria-label="Назад">←</button><button data-rev-next aria-label="Вперёд">→</button></div>
+  </div>
+  <div class="rev-track reveal d1" id="revTrack">
+    <article class="rev-card"><div class="rev-top"><span class="rev-name">Lena</span><span class="rev-stars" aria-label="5 из 5">★★★★★</span></div><p class="rev-text">Я никогда не жила в деревне в столь комфортных условиях. Предусмотрено всё до мелочей. Наслаждаясь сауной, можно поболтать и послушать музыку (Алиса). Низкий поклон хозяйке за наимягчайшие полотенца и пледы. Рядом шикарное озеро и Волга, 15 минут до Ярославля.</p><div class="rev-meta"><div class="row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6.5-5.8 6.5-10.5a6.5 6.5 0 1 0-13 0C5.5 15.2 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.4"/></svg>Островок</div><div class="row"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 1.8"/></svg>2026</div></div></article>
+    <article class="rev-card"><div class="rev-top"><span class="rev-name">Кристина</span><span class="rev-stars" aria-label="5 из 5">★★★★★</span></div><p class="rev-text">Отдыхали семьёй из 5 человек и собачкой в этой чудесной атмосфере. Были приятно удивлены трепетной и душевной заботой хозяев. Абсолютно всё продумано до мелочей, даже при встрече положили сладкий комплимент. Если хотите провести время спокойно и уютно — вам сюда!</p><div class="rev-meta"><div class="row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6.5-5.8 6.5-10.5a6.5 6.5 0 1 0-13 0C5.5 15.2 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.4"/></svg>Авито</div><div class="row"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 1.8"/></svg>6 июля</div></div></article>
+    <article class="rev-card"><div class="rev-top"><span class="rev-name">Елизавета</span><span class="rev-stars" aria-label="5 из 5">★★★★★</span></div><p class="rev-text">Удобно, что домики недалеко от города — быстро доехали и реально перезагрузились. Уютно, чисто и всё точно как на фото. Отдельное спасибо за сауну 🔥 Вечером была такая атмосфера, что не хотелось уезжать.</p><div class="rev-meta"><div class="row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6.5-5.8 6.5-10.5a6.5 6.5 0 1 0-13 0C5.5 15.2 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.4"/></svg>Суточно</div><div class="row"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 1.8"/></svg>май 2026</div></div></article>
+    <article class="rev-card"><div class="rev-top"><span class="rev-name">Светлана</span><span class="rev-stars" aria-label="5 из 5">★★★★★</span></div><p class="rev-text">Прекрасное, тихое и уютное местечко, чтобы отдохнуть от городской суеты 🥰 Всё очень чисто, ухоженно, сделано с любовью и заботой. Мария была всегда на связи, всё понятно объяснила. Невероятное место, в которое хочется вернуться.</p><div class="rev-meta"><div class="row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6.5-5.8 6.5-10.5a6.5 6.5 0 1 0-13 0C5.5 15.2 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.4"/></svg>Циан</div><div class="row"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 1.8"/></svg>7 июня</div></div></article>
+    <article class="rev-card"><div class="rev-top"><span class="rev-name">Алексей</span><span class="rev-stars" aria-label="5 из 5">★★★★★</span></div><p class="rev-text">Здесь очень тихо и спокойно, реально делаешь выдох, остановку, отдыхаешь от беготни.</p><div class="rev-meta"><div class="row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6.5-5.8 6.5-10.5a6.5 6.5 0 1 0-13 0C5.5 15.2 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.4"/></svg>Островок</div><div class="row"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 1.8"/></svg>июнь 2026</div></div></article>
+    <article class="rev-card"><div class="rev-top"><span class="rev-name">Наталья Малинина</span><span class="rev-stars" aria-label="5 из 5">★★★★★</span></div><p class="rev-text">Были на выходных в этом прекрасном доме! Всё соответствует описанию, территория чистая, домики уютные, очень атмосферные, каждая деталь красивая, всё новенькое. Мангал, терраса — 👍 Спасибо хозяевам, отдых удался!</p><div class="rev-meta"><div class="row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6.5-5.8 6.5-10.5a6.5 6.5 0 1 0-13 0C5.5 15.2 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.4"/></svg>Авито</div><div class="row"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 1.8"/></svg>31 марта</div></div></article>
+    <article class="rev-card"><div class="rev-top"><span class="rev-name">Dina</span><span class="rev-stars" aria-label="5 из 5">★★★★★</span></div><p class="rev-text">Получили большое удовольствие от времени в домике. Всё соответствует фото, отличная атмосфера, очень тихое место. Удобно, что два отдельных домика: муж выспался перед дорогой в одном, а я поработала во втором. Интернет работал отлично.</p><div class="rev-meta"><div class="row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6.5-5.8 6.5-10.5a6.5 6.5 0 1 0-13 0C5.5 15.2 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.4"/></svg>Суточно</div><div class="row"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 1.8"/></svg>10 февраля</div></div></article>
+    <article class="rev-card"><div class="rev-top"><span class="rev-name">Роман</span><span class="rev-stars" aria-label="5 из 5">★★★★★</span></div><p class="rev-text">Близость к городу, соответствие фото, состояние участка, чистота внутри домиков. Есть всё необходимое для кратковременного проживания. Лучше арендовать оба участка своей компанией, чтобы получить полное уединение с природой.</p><div class="rev-meta"><div class="row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6.5-5.8 6.5-10.5a6.5 6.5 0 1 0-13 0C5.5 15.2 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.4"/></svg>Циан</div><div class="row"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 1.8"/></svg>июнь 2026</div></div></article>
+  </div>
+</section>
+
+<!-- Location -->
+<section class="band container" id="lokatsiya">
+  <div class="loc-grid">
+    <div class="loc-map reveal"><iframe src="https://yandex.ru/map-widget/v1/?ll=40.101477%2C57.582794&z=15&pt=40.101477%2C57.582794%2Cpm2rdm" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="position:absolute;inset:0;border:0" title="Карта — деревня Семёново"></iframe></div>
+    <div class="loc-facts reveal d1">
+      <div class="eyebrow">Локация</div>
+      <h2 class="h2">10 км от Ярославля</h2>
+      <p class="body muted" style="max-width:46ch">«Середина» уже совсем не в городе, но добираться близко: хорошая асфальтированная дорога ведёт в настоящую жилую деревню — с деревянными домами, резными наличниками и тишиной вокруг.</p>
+      <div class="loc-facts" style="gap:18px">
+        <div class="fact"><div class="n">10</div><div class="body">километров до Ярославля — без долгой дороги</div></div>
+        <div class="fact"><div class="n">5</div><div class="body">минут на машине до пляжа на Волге</div></div>
+      </div>
+      <div class="plot-actions">
+        <a class="btn btn-ghost" href="https://yandex.ru/maps/?text=деревня+Семёново+10Б+Ярославский" target="_blank" rel="noopener">Деревня Семёново, 10Б <span class="arw" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ideas -->
+<section class="band container" id="idei">
+  <div class="sec-head reveal">
+    <div class="eyebrow">Идеи для отдыха</div>
+    <h2 class="h2">Чем заняться</h2>
+  </div>
+  <div class="ideas">
+    <div class="idea-col reveal">
+      <h3 class="h3">Прогулки и природа</h3>
+      <ul class="idea-list">
+        <li><span class="dash">—</span> Прогуляться по деревне и рассмотреть старинные дома с резными наличниками</li>
+        <li><span class="dash">—</span> Встретить закат в поле</li>
+        <li><span class="dash">—</span> Съездить на пляж в деревню Филимоново или на «Яр-Байкал»</li>
+      </ul>
+      <h3 class="h3" style="margin-top:36px">Активный отдых</h3>
+      <ul class="idea-list">
+        <li><span class="dash">—</span> Арендовать снегоход, квадроцикл, эндуро или питбайк — «ПитбайкГараж», в 5 минутах езды от домиков</li>
+      </ul>
+      <h3 class="h3" style="margin-top:36px">В домике</h3>
+      <ul class="idea-list">
+        <li><span class="dash">—</span> Настольные игры, которые уже ждут в домике</li>
+        <li><span class="dash">—</span> Сауна</li>
+        <li><span class="dash">—</span> Просмотр фильмов</li>
+      </ul>
+    </div>
+    <div class="idea-col reveal d1">
+      <h3 class="h3">Что посмотреть в Ярославле</h3>
+      <ul class="idea-list">
+        <li><span class="dash">—</span> Шоу-макет «Золотое кольцо» — миниатюры городов Золотого кольца</li>
+        <li><span class="dash">—</span> Скалодром и батут для взрослых «Красный Маяк»</li>
+        <li><span class="dash">—</span> Ярославский кёрлинг-клуб</li>
+        <li><span class="dash">—</span> Падел (ракеточный спорт) — Padel Star</li>
+        <li><span class="dash">—</span> Фотосъёмка прямо в домиках или в лесу — фотограф Ольга Бирюзова</li>
+      </ul>
+      <h3 class="h3" style="margin-top:36px">Вкусные места</h3>
+      <ul class="idea-list">
+        <li><span class="dash">—</span> «Лючия» — итальянская кухня</li>
+        <li><span class="dash">—</span> «Гуд Карма» — японская кухня, коктейли, кальяны, DJ-сеты</li>
+        <li><span class="dash">—</span> «Мамука» — грузинская кухня, пекарня, сыроварня</li>
+        <li><span class="dash">—</span> «Ешь Торт» — кондитерская, идеально для завтраков</li>
+        <li><span class="dash">—</span> «Союз писателей» — уютное бистро</li>
+        <li><span class="dash">—</span> «Брюгге» — бельгийское пивное кафе</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="band container">
+  <div class="cta-band reveal">
+    <div class="eyebrow" style="color:rgba(247,240,225,.7)">Бронирование</div>
+    <h2 class="h2" style="margin-top:16px;max-width:16ch">Приезжайте выдохнуть</h2>
+    <p class="lead" style="margin-top:20px">Забронируйте участок целиком на любой из площадок — и весь уголок природы будет только вашим.</p>
+    <div class="agg">
+      <div class="agg-card"><img class="agg-logo" src="assets/logos/avito.png" alt="Авито"><div class="agg-links"><a href="https://www.avito.ru/tunoshna/doma_dachi_kottedzhi/2-k._dom_30_m_7949001478" target="_blank" rel="noopener">Выдох</a><a href="https://www.avito.ru/tunoshna/doma_dachi_kottedzhi/2-k._dom_30_m_7949704730" target="_blank" rel="noopener">Пауза</a></div></div>
+      <div class="agg-card"><span class="agg-name">Суточно</span><div class="agg-links"><a href="https://sutochno.ru/front/searchapp/detail/2282830" target="_blank" rel="noopener">Выдох</a><a href="https://sutochno.ru/front/searchapp/detail/2282850" target="_blank" rel="noopener">Пауза</a></div></div>
+      <div class="agg-card"><span class="agg-name">Циан</span><div class="agg-links"><a href="https://www.cian.ru/rent/suburban/330422594/" target="_blank" rel="noopener">Выдох</a><a href="https://www.cian.ru/rent/suburban/330423128/" target="_blank" rel="noopener">Пауза</a></div></div>
+      <div class="agg-card"><span class="agg-name">Островок</span><div class="agg-links"><a href="#" target="_blank" rel="noopener">Выдох</a><a href="#" target="_blank" rel="noopener">Пауза</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VK community -->
+<section class="container" id="vk">
+  <div class="vk-block reveal">
+    <div class="vk-copy">
+      <span class="eyebrow vk-eyebrow">ВКонтакте</span>
+      <h2 class="h2 vk-head">«Середина»<br>в ВКонтакте</h2>
+      <p class="vk-lead">Новости, спецпредложения и живые видео с участков. Подписывайтесь, чтобы оставаться на связи!</p>
+      <div class="vk-cta">
+        <a class="btn vk-btn" href="https://vk.ru/seredina_76" target="_blank" rel="noopener">Подписаться</a>
+        <span class="vk-handle">vk.ru/seredina_76</span>
+      </div>
+    </div>
+    <div class="vk-media">
+      <div class="vk-phone"><img src="assets/vk-post.jpg" alt="Пост сообщества «Середина» ВКонтакте" loading="lazy"></div>
+      <div class="vk-qr"><img src="assets/vk-qr.jpg" alt="QR-код на сообщество ВКонтакте" loading="lazy"><span>Наведите камеру</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer container">
+  <div class="foot-top">
+    <img class="foot-logo" src="../assets/seredina-logo.png" alt="Середина">
+    <div class="foot-cols">
+      <div class="col">
+        <h4>Домики</h4>
+        <a href="#domiki">Участок «Выдох»</a>
+        <a href="#domiki">Участок «Пауза»</a>
+        <a href="#territoriya">Территория</a>
+      </div>
+      <div class="col">
+        <h4>Гостям</h4>
+        <a href="#pravila">Правила проживания</a>
+        <a href="#idei">Идеи для отдыха</a>
+        <a href="#otzyvy">Отзывы</a>
+        <a href="#lokatsiya">Как добраться</a>
+      </div>
+      <div class="col">
+        <h4>Контакты</h4>
+        <p>Деревня Семёново, 10Б</p>
+        <p>Ярославский округ</p>
+        <a href="https://vk.ru/seredina_76" target="_blank" rel="noopener">vk.ru/seredina_76</a>
+        <a href="oferta.html">Договор оферты</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© «Середина» — домики для отдыха под Ярославлем</span>
+    <span>Место для паузы и выдоха</span>
+  </div>
+</footer>
+
+<a class="book-fab" href="#booking" id="bookFab">Забронировать</a>
+
+<div class="cookie" id="cookie">
+  <span class="cookie-txt">Мы используем «cookie» для удобства. <a href="#pravila">Подробнее</a></span>
+  <button class="cookie-ok" id="cookieOk" type="button">Ок</button>
+</div>
+
+<script defer src="https://unpkg.com/lucide@0.544.0/dist/umd/lucide.min.js"></script>
+<script type="module" src="https://homereserve.ru/widget.js"></script>
+<script type="module">window.homereserve.initWidgetSearch({"token":"htXBBOx6J7"})</script>
+<script defer src="site.js"></script>
+<script>window.addEventListener('load',function(){if(window.lucide&&window.lucide.createIcons){lucide.createIcons();}});</script>
+</body>
+</html>
