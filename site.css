@@ -80,7 +80,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:800;line-height:1;letter-spaci
 @media(min-width:961px){
   .site-header.nav-solid .nav-links{background:var(--snow);border-radius:var(--r-pill);padding:13px 30px;box-shadow:0 10px 30px -16px rgba(35,33,44,.45)}
 }
-.nav .logo{height:38px;width:auto}
+.nav .logo{height:clamp(46px,4.8vw,56px);width:auto}
 .nav-links{display:flex;align-items:center;gap:28px}
 .nav-links a{color:var(--charcoal);font-size:16px;font-weight:500}
 .nav-links a:hover{text-decoration:underline;text-underline-offset:6px}
@@ -247,12 +247,10 @@ h1,h2,h3{font-family:var(--font-head);font-weight:800;line-height:1;letter-spaci
 /* ---- Platform ratings (laurel badges) ---- */
 .awards{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(12px,1.8vw,30px);margin-top:clamp(40px,5vw,60px)}
 .award{position:relative;width:clamp(150px,15vw,200px);aspect-ratio:348/281;display:grid;place-items:center;flex:0 0 auto}
-a.award{text-decoration:none;color:inherit;transition:transform .25s var(--ease)}
-a.award:hover{transform:translateY(-4px)}
-a.award:hover .logo{opacity:.88}
+a.award{text-decoration:none;color:inherit}
 .award::before{content:"";position:absolute;inset:0;background:url(assets/laurel-wreath.png) center/contain no-repeat;z-index:0}
-.award .mid{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:0 22%}
-.award .logo{width:auto;height:auto;max-width:100%;max-height:clamp(38px,4.2vw,50px);display:block;margin:0 auto;object-fit:contain;transition:opacity .25s var(--ease)}
+.award .mid{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;text-align:center;padding:0 20%}
+.award .logo{width:auto;height:auto;max-width:100%;max-height:clamp(46px,5.2vw,60px);display:block;margin:0 auto;object-fit:contain}
 .award .logo-ph{font-family:var(--font-head);font-weight:800;font-size:clamp(12px,1.4vw,15px);letter-spacing:-.01em;color:var(--charcoal);white-space:nowrap;line-height:1}
 .award .divx{display:none}
 .award .rcol{display:flex;flex-direction:column;gap:3px;align-items:center}
@@ -351,7 +349,7 @@ a.award:hover .logo{opacity:.88}
 .foot-cols{display:grid;grid-template-columns:repeat(3,minmax(150px,1fr));gap:36px;flex:1 1 560px}
 .foot-cols .col h4{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--charcoal-soft);margin-bottom:16px}
 .foot-cols .col a,.foot-cols .col p{display:block;color:var(--charcoal);font-size:16px;margin-bottom:11px;font-weight:500}
-.foot-logo{height:44px;flex:0 0 auto}
+.foot-logo{height:60px;flex:0 0 auto}
 .foot-bottom{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:26px;font-size:14px;color:var(--charcoal-soft)}
 
 /* ---- Reveal animation ---- */
