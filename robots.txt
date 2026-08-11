@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shbshv-czec.github.io/seredina76/sitemap.xml
