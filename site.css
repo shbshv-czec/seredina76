@@ -275,7 +275,7 @@ a.award{text-decoration:none;color:inherit}
 @media(max-width:600px){
   .book-fab{left:16px;right:16px;text-align:center;bottom:16px}
   /* Cookie sits ABOVE the full-width booking button so it never covers it */
-  .cookie{left:16px;right:16px;bottom:94px;max-width:none;width:auto}
+  .cookie{left:16px;right:16px;bottom:114px;max-width:none;width:auto}
 }
 .cookie-txt{font-size:12px;line-height:1.35;font-weight:400;letter-spacing:-.01em;color:var(--charcoal)}
 .cookie-txt a{color:var(--pine);text-decoration:underline;text-underline-offset:2px}
