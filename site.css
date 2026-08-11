@@ -249,7 +249,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:800;line-height:1;letter-spaci
 .award{position:relative;width:clamp(150px,15vw,200px);aspect-ratio:348/281;display:grid;place-items:center;flex:0 0 auto}
 .award::before{content:"";position:absolute;inset:0;background:url(assets/laurel-wreath.png) center/contain no-repeat;z-index:0}
 .award .mid{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:0 24%}
-.award .logo{height:clamp(17px,1.8vw,23px);width:auto;display:block;object-fit:contain}
+.award .logo{height:clamp(17px,1.8vw,23px);width:auto;max-width:100%;display:block;object-fit:contain}
 .award .logo-ph{font-family:var(--font-head);font-weight:800;font-size:clamp(12px,1.4vw,15px);letter-spacing:-.01em;color:var(--charcoal);white-space:nowrap;line-height:1}
 .award .divx{display:none}
 .award .rcol{display:flex;flex-direction:column;gap:3px;align-items:center}
