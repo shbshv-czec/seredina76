@@ -15,6 +15,24 @@
     }, { threshold: 0.12 }).observe(booking);
   }
 
+  // In-page anchor links: smooth-scroll WITHOUT changing location.hash.
+  // The homereserve booking widget re-mounts on every hashchange and blanks out,
+  // so any click on #o-nas / #booking / … would wipe it. We scroll by JS instead
+  // and never touch the hash, leaving the widget untouched.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (!a) return;
+    if (a.target === '_blank') return; // placeholder links open in a new tab
+    var href = a.getAttribute('href');
+    if (!href || href === '#') return;
+    var target = document.getElementById(href.slice(1));
+    if (!target) return;
+    e.preventDefault();
+    var headH = header ? header.getBoundingClientRect().height : 0;
+    var y = target.getBoundingClientRect().top + window.scrollY - headH - 12;
+    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+  }, false);
+
   // Mobile nav
   var nav = document.getElementById('nav');
   var burger = document.getElementById('burger');
