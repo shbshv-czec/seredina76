@@ -206,6 +206,13 @@
     var caps = Array.prototype.slice.call(gal.querySelectorAll('.gcap'));
     var n = slides.length;
     var idx = Math.max(0, slides.findIndex(function (s) { return s.classList.contains('active'); }));
+    var seen = false;
+    var loadVisible = function () {
+      [idx, (idx - 1 + n) % n, (idx + 1) % n].forEach(function (i) {
+        var im = slides[i] && slides[i].querySelector('img');
+        if (im && im.getAttribute('loading') === 'lazy') im.setAttribute('loading', 'eager');
+      });
+    };
     var render = function () {
       var prevI = (idx - 1 + n) % n, nextI = (idx + 1) % n;
       slides.forEach(function (s, i) {
@@ -216,6 +223,7 @@
         else { s.style.display = 'none'; }
       });
       caps.forEach(function (c, i) { c.classList.toggle('active', i === idx); });
+      if (seen) loadVisible();
     };
     var go = function (d) { idx = (idx + d + n) % n; render(); };
     slides.forEach(function (s, i) { s.addEventListener('click', function () { if (i !== idx) { idx = i; render(); } }); });
@@ -227,6 +235,9 @@
     frame.addEventListener('touchend', function (e) { if (x0 == null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1); x0 = null; }, { passive: true });
     window.addEventListener('resize', render);
     render();
+    if (window.IntersectionObserver) {
+      new IntersectionObserver(function (es, ob) { if (es[0].isIntersecting) { seen = true; loadVisible(); ob.disconnect(); } }, { rootMargin: '300px' }).observe(gal);
+    } else { seen = true; loadVisible(); }
   });
 
   // Reviews carousel arrows

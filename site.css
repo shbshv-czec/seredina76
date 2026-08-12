@@ -226,7 +226,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:800;line-height:1;letter-spaci
 @keyframes capfade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .gcap-t{font-family:var(--font-head);font-weight:800;font-size:clamp(24px,2.7vw,36px);letter-spacing:-.02em;color:var(--charcoal);margin-bottom:10px;line-height:1.05}
 .gcap-d{font-size:clamp(16px,1.3vw,19px);line-height:1.5;color:var(--charcoal);font-weight:400;max-width:620px;margin:0 auto;text-wrap:pretty}
-@media(max-width:700px){.gal-arrow{display:none}.gal-frame{max-width:none;gap:8px;height:min(clamp(300px,66vw,460px),84vw)}.gslide.active img{max-width:72vw}.gslide.side{flex-basis:40px;height:58%}}
+@media(max-width:700px){.gal-arrow{display:none}.gal-frame{max-width:none;gap:6px;overflow:visible;height:min(clamp(290px,64vw,440px),82vw)}.gslide.active img{max-width:64vw}.gslide.side{flex-basis:38px;height:60%}}
 
 /* image zoom on hover */
 .frame image-slot,.frame .zoom{transition:transform .5s var(--ease)}
