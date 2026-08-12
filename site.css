@@ -212,6 +212,9 @@ h1,h2,h3{font-family:var(--font-head);font-weight:800;line-height:1;letter-spaci
 .gslide.side.right{order:3}
 .gslide img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:var(--r-card);display:block}
 .gslide.active img{max-width:min(56vw,720px);box-shadow:0 34px 74px -32px rgba(35,33,44,.5)}
+/* Side previews are cropped fillers so the peek reads as the next photo's edge, whatever its orientation */
+.gslide.side{overflow:hidden;border-radius:var(--r-card)}
+.gslide.side img{width:100%;height:100%;max-width:100%;max-height:100%;object-fit:cover;border-radius:0}
 .gslide image-slot{height:100%;max-width:100%;aspect-ratio:3/2;border-radius:var(--r-card);display:block}
 .gslide.active image-slot{max-width:min(56vw,720px)}
 .gal-arrow{flex:0 0 auto;width:clamp(48px,4vw,58px);height:clamp(48px,4vw,58px);border-radius:999px;border:1.5px solid var(--charcoal);background:var(--snow);cursor:pointer;font-size:20px;color:var(--charcoal);display:grid;place-items:center;transition:background .18s var(--ease),color .18s var(--ease),transform .18s var(--ease);z-index:6}
@@ -223,7 +226,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:800;line-height:1;letter-spaci
 @keyframes capfade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .gcap-t{font-family:var(--font-head);font-weight:800;font-size:clamp(24px,2.7vw,36px);letter-spacing:-.02em;color:var(--charcoal);margin-bottom:10px;line-height:1.05}
 .gcap-d{font-size:clamp(16px,1.3vw,19px);line-height:1.5;color:var(--charcoal);font-weight:400;max-width:620px;margin:0 auto;text-wrap:pretty}
-@media(max-width:700px){.gal-arrow{display:none}.gal-frame{max-width:none;gap:10px;height:min(clamp(320px,64vw,480px),80vw)}.gslide.side{flex-basis:60px;height:38%}}
+@media(max-width:700px){.gal-arrow{display:none}.gal-frame{max-width:none;gap:8px;height:min(clamp(300px,66vw,460px),84vw)}.gslide.active img{max-width:72vw}.gslide.side{flex-basis:40px;height:58%}}
 
 /* image zoom on hover */
 .frame image-slot,.frame .zoom{transition:transform .5s var(--ease)}
