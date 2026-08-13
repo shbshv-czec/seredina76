@@ -197,9 +197,8 @@ a.award{text-decoration:none;color:inherit}
 .award::before{content:"";position:absolute;inset:0;background:url(assets/laurel-wreath.png) center/contain no-repeat;z-index:0}
 .award .mid{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;text-align:center;padding:0 20%}
 .award .logo{width:auto;height:auto;max-width:100%;max-height:clamp(46px,5.2vw,60px);display:block;margin:0 auto;object-fit:contain}
-/* Balance the three logos to roughly the same visual scale (tuned per aspect ratio) */
+/* Balance the logos to roughly the same visual scale (tuned per aspect ratio) */
 .award[data-src="avito"] .logo{max-width:clamp(60px,7vw,78px);max-height:none}
-.award[data-src="yandex"] .logo{max-height:clamp(52px,6.6vw,68px);max-width:100%}
 .award[data-src="sutochno"] .logo{max-height:clamp(46px,5.6vw,58px);max-width:100%}
 .award .logo-ph{font-family:var(--font-head);font-weight:800;font-size:clamp(12px,1.4vw,15px);letter-spacing:-.01em;color:var(--charcoal);white-space:nowrap;line-height:1}
 .award .divx{display:none}
@@ -266,14 +265,15 @@ a.award{text-decoration:none;color:inherit}
 .cta-band{background:var(--pine);color:var(--paper);border-radius:var(--r-hero);padding:clamp(48px,7vw,88px) clamp(32px,5vw,72px);text-align:left}
 .cta-band h2{color:var(--paper)}
 .cta-band .lead{color:rgba(247,240,225,.85)}
-/* Booking platforms: equal cards that share one row on wide screens */
-.agg{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:clamp(16px,2vw,26px);margin-top:clamp(28px,3.5vw,44px)}
-.agg-card{background:var(--snow);border-radius:22px;padding:22px 24px;display:flex;flex-direction:column;gap:18px}
-.agg-logo{height:auto;max-height:34px;max-width:118px;width:auto;display:block;object-fit:contain;align-self:center;margin:0 auto 2px}
-/* Wide horizontal lockups need more width to read at the same visual size */
-.agg-logo[alt="Яндекс Путешествия"],.agg-logo[alt="Суточно.ру"]{width:100%;max-width:168px}
-.agg-links{display:flex;gap:8px}
-.agg-links a{flex:1 1 auto;text-align:center;background:var(--charcoal);color:var(--snow);border-radius:var(--r-pill);padding:9px 16px;font-size:14px;font-weight:600;transition:background .15s var(--ease)}
+/* Booking platforms: flexible cards; content can never outgrow its card —
+   logos are capped by max-width:100%, buttons wrap to a stack when narrow */
+.agg{display:flex;flex-wrap:wrap;gap:clamp(16px,2vw,26px);margin-top:clamp(28px,3.5vw,44px)}
+.agg-card{flex:1 1 176px;min-width:0;max-width:340px;background:var(--snow);border-radius:22px;padding:22px 24px;display:flex;flex-direction:column;justify-content:center;gap:18px}
+.agg-logo{width:auto;height:auto;max-height:36px;max-width:min(150px,100%);display:block;object-fit:contain;align-self:center;margin:0 auto 2px}
+/* Wide horizontal lockups are thin, so they may take more width */
+.agg-logo[alt="Яндекс Путешествия"],.agg-logo[alt="Суточно.ру"]{max-width:min(170px,100%)}
+.agg-links{display:flex;flex-wrap:wrap;gap:8px}
+.agg-links a{flex:1 1 auto;min-width:0;text-align:center;background:var(--charcoal);color:var(--snow);border-radius:var(--r-pill);padding:9px 16px;font-size:14px;font-weight:600;transition:background .15s var(--ease)}
 .agg-links a:hover{background:#15141b;text-decoration:none}
 .footer{padding-block:clamp(64px,8vw,96px) 48px}
 .foot-top{display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;align-items:flex-start;margin-bottom:56px}
