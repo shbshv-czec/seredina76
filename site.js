@@ -247,10 +247,19 @@
     var caps = Array.prototype.slice.call(g.querySelectorAll('.ugal-cap'));
     if (!slides.length) return;
     var idx = 0;
+    var loadNear = function (i) {
+      [i - 1, i, i + 1].forEach(function (k) {
+        if (k >= 0 && k < slides.length) {
+          var im = slides[k].querySelector('img');
+          if (im && im.getAttribute('loading') === 'lazy') im.setAttribute('loading', 'eager');
+        }
+      });
+    };
     var setActive = function (i) {
       idx = i;
       slides.forEach(function (s, k) { s.classList.toggle('is-active', k === i); });
       caps.forEach(function (c, k) { c.classList.toggle('active', k === i); });
+      loadNear(i);
     };
     var centerOn = function (i) {
       i = Math.max(0, Math.min(slides.length - 1, i));
@@ -273,6 +282,9 @@
     slides.forEach(function (s, k) { s.addEventListener('click', function () { if (k !== idx) centerOn(k); }); });
     setActive(0);
     requestAnimationFrame(function () { utrack.scrollLeft = slides[0].offsetLeft - (utrack.clientWidth - slides[0].offsetWidth) / 2; });
+    if (window.IntersectionObserver) {
+      new IntersectionObserver(function (es, ob) { if (es[0].isIntersecting) { loadNear(idx); ob.disconnect(); } }, { rootMargin: '400px' }).observe(g);
+    } else { loadNear(0); }
   });
 
   // Reviews carousel arrows
