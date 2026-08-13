@@ -7,19 +7,19 @@
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://shbshv-czec.github.io/seredina76/assets/hero-terrace.webp</image:loc>
-      <image:title>Терраса и зона отдыха на участке</image:title>
+      <image:title>Зона отдыха с креслами и мангалом на участке домиков «Середина» под Ярославлем</image:title>
     </image:image>
     <image:image>
       <image:loc>https://shbshv-czec.github.io/seredina76/assets/hero-bed.webp</image:loc>
-      <image:title>Спальня в домике</image:title>
+      <image:title>Спальня в домике для отдыха «Середина» под Ярославлем</image:title>
     </image:image>
     <image:image>
       <image:loc>https://shbshv-czec.github.io/seredina76/assets/plot-vydoh.webp</image:loc>
-      <image:title>Домик «Выдох»</image:title>
+      <image:title>Участок «Выдох» — домик с сауной под Ярославлем</image:title>
     </image:image>
     <image:image>
       <image:loc>https://shbshv-czec.github.io/seredina76/assets/plot-pauza.webp</image:loc>
-      <image:title>Домик «Пауза»</image:title>
+      <image:title>Участок «Пауза» — уединённый домик для отдыха вдвоём</image:title>
     </image:image>
     <image:image>
       <image:loc>https://shbshv-czec.github.io/seredina76/assets/gi-01.webp</image:loc>
@@ -58,10 +58,6 @@
       <image:title>Прихожая с тёплым полом</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://shbshv-czec.github.io/seredina76/assets/gi-10.webp</image:loc>
-      <image:title>Кресло у окна</image:title>
-    </image:image>
-    <image:image>
       <image:loc>https://shbshv-czec.github.io/seredina76/assets/gi-11.webp</image:loc>
       <image:title>Уютные детали интерьера</image:title>
     </image:image>
@@ -70,8 +66,12 @@
       <image:title>Место для хранения вещей</image:title>
     </image:image>
     <image:image>
+      <image:loc>https://shbshv-czec.github.io/seredina76/assets/gt-10.webp</image:loc>
+      <image:title>Сауна в домиках «Середина» под Ярославлем</image:title>
+    </image:image>
+    <image:image>
       <image:loc>https://shbshv-czec.github.io/seredina76/assets/gt-01.webp</image:loc>
-      <image:title>Веранда со столом и креслами</image:title>
+      <image:title>Веранда с зоной отдыха в домиках «Середина»</image:title>
     </image:image>
     <image:image>
       <image:loc>https://shbshv-czec.github.io/seredina76/assets/gt-02.webp</image:loc>
@@ -80,10 +80,6 @@
     <image:image>
       <image:loc>https://shbshv-czec.github.io/seredina76/assets/gt-03.webp</image:loc>
       <image:title>Мангальная зона</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://shbshv-czec.github.io/seredina76/assets/gt-04.webp</image:loc>
-      <image:title>Зона отдыха с креслами</image:title>
     </image:image>
     <image:image>
       <image:loc>https://shbshv-czec.github.io/seredina76/assets/gt-05.webp</image:loc>
@@ -96,18 +92,6 @@
     <image:image>
       <image:loc>https://shbshv-czec.github.io/seredina76/assets/gt-07.webp</image:loc>
       <image:title>Зелёный двор и трава</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://shbshv-czec.github.io/seredina76/assets/gt-08.webp</image:loc>
-      <image:title>Домик с вечерними огнями</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://shbshv-czec.github.io/seredina76/assets/gt-09.webp</image:loc>
-      <image:title>Весь участок с двумя домиками</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://shbshv-czec.github.io/seredina76/assets/gt-10.webp</image:loc>
-      <image:title>Сауна</image:title>
     </image:image>
     <image:image>
       <image:loc>https://shbshv-czec.github.io/seredina76/assets/gt-11.webp</image:loc>
