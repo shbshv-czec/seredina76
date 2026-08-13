@@ -196,6 +196,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:800;line-height:1;letter-spaci
 .sg-arrows button{width:44px;height:44px;border-radius:99px;border:none;background:var(--snow);color:var(--charcoal);font-size:17px;cursor:pointer;display:grid;place-items:center;transition:transform .2s var(--ease),background .2s var(--ease),color .2s var(--ease)}
 .sg-arrows button:hover{background:var(--charcoal);color:var(--snow)}
 .sg-arrows button:active{transform:scale(.92)}
+.sg-arrows button svg{width:20px;height:20px}
 .simple-gal .tag-pill{z-index:3}
 
 /* ---- Cabin comparison table ---- */
