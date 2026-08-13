@@ -269,12 +269,12 @@
         }
       });
     };
-    var setActive = function (i) {
+    var markActive = function (i) {
       idx = i;
       slides.forEach(function (s, k) { s.classList.toggle('is-active', k === i); });
       caps.forEach(function (c, k) { c.classList.toggle('active', k === i); });
-      loadNear(i);
     };
+    var setActive = function (i) { markActive(i); loadNear(i); };
     var centerOn = function (i) {
       i = Math.max(0, Math.min(slides.length - 1, i));
       var s = slides[i];
@@ -294,7 +294,7 @@
     uprev && uprev.addEventListener('click', function () { centerOn(idx - 1); });
     unext && unext.addEventListener('click', function () { centerOn(idx + 1); });
     slides.forEach(function (s, k) { s.addEventListener('click', function () { if (k !== idx) centerOn(k); }); });
-    setActive(0);
+    markActive(0);
     requestAnimationFrame(function () { utrack.scrollLeft = slides[0].offsetLeft - (utrack.clientWidth - slides[0].offsetWidth) / 2; });
     if (window.IntersectionObserver) {
       new IntersectionObserver(function (es, ob) { if (es[0].isIntersecting) { loadNear(idx); ob.disconnect(); } }, { rootMargin: '400px' }).observe(g);
