@@ -248,6 +248,26 @@ h1,h2,h3{font-family:var(--font-head);font-weight:800;line-height:1;letter-spaci
 .gcap-d{font-size:clamp(16px,1.3vw,19px);line-height:1.5;color:var(--charcoal);font-weight:400;max-width:620px;margin:0 auto;text-wrap:pretty}
 @media(max-width:700px){.gal-arrow{display:none}.gal-frame{max-width:none;gap:6px;overflow:visible;height:min(clamp(290px,64vw,440px),82vw)}.gslide.active img{max-width:64vw}.gslide.side{flex-basis:38px;height:60%}}
 
+/* ---- Universal gallery: full photo (no crop) + blurred fill, peek next, arrows ---- */
+.ugal{margin-top:clamp(22px,3vw,40px)}
+.ugal-stage{position:relative}
+.ugal-track{display:flex;gap:clamp(10px,1.4vw,16px);overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:2px clamp(8px,6vw,12%)}
+.ugal-track::-webkit-scrollbar{display:none}
+.ugal-slide{position:relative;flex:0 0 auto;width:min(86%,720px);scroll-snap-align:center;height:min(62vh,560px);border-radius:var(--r-card);overflow:hidden;background:var(--paper-2);cursor:pointer}
+.ugal-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:blur(28px) brightness(.72) saturate(1.1);transform:scale(1.15)}
+.ugal-slide>img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;display:block}
+.ugal-slide::after{content:"";position:absolute;inset:0;z-index:2;background:rgba(30,28,38,.36);transition:opacity .35s var(--ease);pointer-events:none}
+.ugal-slide.is-active::after{opacity:0}
+.ugal-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:6;width:clamp(44px,4vw,54px);height:clamp(44px,4vw,54px);border-radius:999px;border:none;background:var(--snow);color:var(--charcoal);display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 24px -8px rgba(35,33,44,.4);transition:background .18s var(--ease),color .18s var(--ease)}
+.ugal-arrow svg{width:22px;height:22px}
+.ugal-arrow:hover{background:var(--charcoal);color:var(--snow)}
+.ugal-arrow.prev{left:clamp(6px,3vw,20px)}
+.ugal-arrow.next{right:clamp(6px,3vw,20px)}
+.ugal-caps{position:relative;margin-top:clamp(20px,2.6vw,32px);text-align:center;min-height:118px}
+.ugal-cap{display:none}
+.ugal-cap.active{display:block;animation:capfade .45s var(--ease)}
+@media(min-width:820px){.ugal-slide{width:min(60%,760px);height:min(66vh,600px)}}
+
 /* image zoom on hover */
 .frame image-slot,.frame .zoom{transition:transform .5s var(--ease)}
 .frame:hover image-slot,.frame:hover .zoom{transform:scale(1.045)}

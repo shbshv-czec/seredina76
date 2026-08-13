@@ -240,6 +240,41 @@
     } else { seen = true; loadVisible(); }
   });
 
+  // Universal gallery: scroll-snap carousel, full photo (no crop), synced captions
+  document.querySelectorAll('[data-ugal]').forEach(function (g) {
+    var utrack = g.querySelector('.ugal-track');
+    var slides = Array.prototype.slice.call(utrack.querySelectorAll('.ugal-slide'));
+    var caps = Array.prototype.slice.call(g.querySelectorAll('.ugal-cap'));
+    if (!slides.length) return;
+    var idx = 0;
+    var setActive = function (i) {
+      idx = i;
+      slides.forEach(function (s, k) { s.classList.toggle('is-active', k === i); });
+      caps.forEach(function (c, k) { c.classList.toggle('active', k === i); });
+    };
+    var centerOn = function (i) {
+      i = Math.max(0, Math.min(slides.length - 1, i));
+      var s = slides[i];
+      utrack.scrollTo({ left: s.offsetLeft - (utrack.clientWidth - s.offsetWidth) / 2, behavior: 'smooth' });
+    };
+    var raf = false;
+    utrack.addEventListener('scroll', function () {
+      if (raf) return; raf = true;
+      requestAnimationFrame(function () {
+        raf = false;
+        var c = utrack.scrollLeft + utrack.clientWidth / 2, best = 0, bd = 1e9;
+        slides.forEach(function (s, k) { var sc = s.offsetLeft + s.offsetWidth / 2, d = Math.abs(sc - c); if (d < bd) { bd = d; best = k; } });
+        if (best !== idx) setActive(best);
+      });
+    }, { passive: true });
+    var uprev = g.querySelector('.ugal-arrow.prev'), unext = g.querySelector('.ugal-arrow.next');
+    uprev && uprev.addEventListener('click', function () { centerOn(idx - 1); });
+    unext && unext.addEventListener('click', function () { centerOn(idx + 1); });
+    slides.forEach(function (s, k) { s.addEventListener('click', function () { if (k !== idx) centerOn(k); }); });
+    setActive(0);
+    requestAnimationFrame(function () { utrack.scrollLeft = slides[0].offsetLeft - (utrack.clientWidth - slides[0].offsetWidth) / 2; });
+  });
+
   // Reviews carousel arrows
   var track = document.getElementById('revTrack');
   if (track) {
