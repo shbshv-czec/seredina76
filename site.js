@@ -178,14 +178,26 @@
   document.querySelectorAll('[data-gal]').forEach(function (gal) {
     var track = gal.querySelector('.sg-track');
     if (!track) return;
-    var slides = track.children.length;
+    var kids = track.children;
+    var slides = kids.length;
     var i = 0;
-    function go(n) { i = (n + slides) % slides; track.style.transform = 'translateX(' + (-i * 100) + '%)'; }
+    var loadSg = function (idx) {
+      [idx - 1, idx, idx + 1].forEach(function (k) {
+        k = (k + slides) % slides;
+        var s = kids[k]; if (!s) return;
+        var im = s.querySelector('img'); if (im && im.getAttribute('loading') === 'lazy') im.setAttribute('loading', 'eager');
+        var bg = s.querySelector('.sg-bg'); if (bg && !bg.style.backgroundImage && bg.dataset.bg) bg.style.backgroundImage = 'url(' + bg.dataset.bg + ')';
+      });
+    };
+    function go(n) { i = (n + slides) % slides; track.style.transform = 'translateX(' + (-i * 100) + '%)'; loadSg(i); }
     var prev = gal.querySelector('[data-sg-prev]');
     var next = gal.querySelector('[data-sg-next]');
     if (prev) prev.addEventListener('click', function (e) { e.stopPropagation(); go(i - 1); });
     if (next) next.addEventListener('click', function (e) { e.stopPropagation(); go(i + 1); });
     track.addEventListener('click', function () { go(i + 1); });
+    if (window.IntersectionObserver) {
+      new IntersectionObserver(function (es, ob) { if (es[0].isIntersecting) { loadSg(0); ob.disconnect(); } }, { rootMargin: '300px' }).observe(gal);
+    } else { loadSg(0); }
   });
 
   // Cabin "подробнее" toggles
@@ -252,6 +264,8 @@
         if (k >= 0 && k < slides.length) {
           var im = slides[k].querySelector('img');
           if (im && im.getAttribute('loading') === 'lazy') im.setAttribute('loading', 'eager');
+          var bg = slides[k].querySelector('.ugal-bg');
+          if (bg && !bg.style.backgroundImage && bg.dataset.bg) bg.style.backgroundImage = 'url(' + bg.dataset.bg + ')';
         }
       });
     };
