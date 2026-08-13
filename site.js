@@ -257,10 +257,13 @@
 // line icons
 if(window.lucide&&window.lucide.createIcons){lucide.createIcons();}
 
-// Cookie strip
+// Cookie strip — stores consent in a real first-party cookie (so «мы используем cookie» is accurate)
 (function(){
   var c=document.getElementById('cookie'), ok=document.getElementById('cookieOk');
   if(!c) return;
-  try{ if(localStorage.getItem('seredina-cookie')==='1') c.classList.add('hide'); }catch(e){}
-  ok&&ok.addEventListener('click',function(){ c.classList.add('hide'); try{localStorage.setItem('seredina-cookie','1');}catch(e){} });
+  var NAME='seredina_consent';
+  function hasCookie(n){ return document.cookie.split('; ').indexOf(n+'=1') > -1; }
+  function setCookie(n,v,days){ var d=new Date(); d.setTime(d.getTime()+days*864e5); document.cookie=n+'='+v+'; expires='+d.toUTCString()+'; path=/; SameSite=Lax'; }
+  if(hasCookie(NAME)) c.classList.add('hide');
+  ok&&ok.addEventListener('click',function(){ c.classList.add('hide'); setCookie(NAME,'1',365); });
 })();
