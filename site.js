@@ -185,7 +185,7 @@
       [idx - 1, idx, idx + 1].forEach(function (k) {
         k = (k + slides) % slides;
         var s = kids[k]; if (!s) return;
-        var im = s.querySelector('img'); if (im && im.getAttribute('loading') === 'lazy') im.setAttribute('loading', 'eager');
+        var im = s.querySelector('img'); if (im && !im.getAttribute('src') && im.dataset.src) im.src = im.dataset.src;
         var bg = s.querySelector('.sg-bg'); if (bg && !bg.style.backgroundImage && bg.dataset.bg) bg.style.backgroundImage = 'url(' + bg.dataset.bg + ')';
       });
     };
@@ -263,7 +263,7 @@
       [i - 1, i, i + 1].forEach(function (k) {
         if (k >= 0 && k < slides.length) {
           var im = slides[k].querySelector('img');
-          if (im && im.getAttribute('loading') === 'lazy') im.setAttribute('loading', 'eager');
+          if (im && !im.getAttribute('src') && im.dataset.src) im.src = im.dataset.src;
           var bg = slides[k].querySelector('.ugal-bg');
           if (bg && !bg.style.backgroundImage && bg.dataset.bg) bg.style.backgroundImage = 'url(' + bg.dataset.bg + ')';
         }
