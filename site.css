@@ -187,9 +187,9 @@ h1,h2,h3{font-family:var(--font-head);font-weight:800;line-height:1;letter-spaci
 /* ---- Simple plot gallery ---- */
 .simple-gal{position:relative;border-radius:var(--r-hero);overflow:hidden;aspect-ratio:4/3;background:var(--paper-2)}
 .sg-track{display:flex;height:100%;transition:transform .55s var(--ease);cursor:pointer}
-.sg-slide{flex:0 0 100%;height:100%}
-.sg-slide image-slot{width:100%;height:100%;display:block}
-.sg-slide img{width:100%;height:100%;object-fit:cover;display:block}
+.sg-slide{position:relative;flex:0 0 100%;height:100%;overflow:hidden}
+.sg-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:blur(22px) brightness(.72) saturate(1.1);transform:scale(1.15);z-index:0}
+.sg-slide img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;display:block}
 .sg-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;padding:0 20px;background:var(--paper-2);color:var(--charcoal-soft);font-weight:600;font-size:15px}
 .sg-ph span{font-size:12px;font-weight:500;opacity:.65}
 .sg-arrows{position:absolute;bottom:16px;right:16px;display:flex;gap:8px;z-index:3}
