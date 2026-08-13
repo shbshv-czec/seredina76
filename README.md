@@ -5,9 +5,11 @@
 ## Файлы
 - `index.html` — главная страница
 - `oferta.html` — договор оферты
-- `site.css` — все стили
-- `site.js` — интерактив (галереи, меню, reveal, параллакс, куки, календарь бронирования)
-- `assets/` — логотип, фото, QR, логотипы площадок
+- `politika.html` — политика обработки персональных данных
+- `site.css` — все стили (включая self-hosted шрифт Manrope из `assets/fonts/`)
+- `site.js` — интерактив (галереи, меню, reveal, параллакс, аккордеоны, cookie-плашка)
+- `assets/` — фото (webp), логотипы площадок, шрифты
+- `robots.txt`, `sitemap.xml`, `llms.txt` — для поисковиков и ИИ-агентов
 
 ## Запуск локально
 Открыть `index.html` в браузере или поднять любой статический сервер:
@@ -16,10 +18,15 @@ python3 -m http.server 8000   # затем http://localhost:8000
 ```
 
 ## Внешние подключения
-- Шрифт Manrope — Google Fonts (`<link>` в `<head>`)
-- Иконки Lucide — CDN
-- Карта — виджет Яндекс.Карт (iframe)
+- Карта — виджет Яндекс.Карт (iframe, lazy)
 - Бронирование — виджет homereserve.ru (`widget.js`)
 
+Шрифты и иконки внешних CDN не используют: Manrope лежит в `assets/fonts/`,
+иконки — инлайновые SVG (набор Lucide, статически вставлен в разметку).
+
+## Кэш-версии
+При изменении `site.css` / `site.js` поднимите `?v=N` в ссылках
+(`index.html`, `oferta.html`, `politika.html`) — GitHub Pages кэширует агрессивно.
+
 ## Публикация
-Подходит для GitHub Pages / Netlify / Vercel как статический сайт: корень публикации = папка с `index.html`.
+GitHub Pages: пуш в `main` публикует сайт (корень = папка с `index.html`).

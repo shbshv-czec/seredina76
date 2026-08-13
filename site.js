@@ -111,30 +111,6 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 
-  // Custom selects (booking bar)
-  var selects = document.querySelectorAll('[data-select]');
-  selects.forEach(function (sel) {
-    var toggle = sel.querySelector('[data-toggle]');
-    var valEl = sel.querySelector('[data-value]');
-    var opts = sel.querySelectorAll('[data-opt]');
-    toggle.addEventListener('click', function (e) {
-      e.stopPropagation();
-      var wasOpen = sel.classList.contains('open');
-      closeAll();
-      if (!wasOpen) sel.classList.add('open');
-    });
-    opts.forEach(function (o) {
-      o.addEventListener('click', function () {
-        valEl.textContent = o.textContent;
-        opts.forEach(function (x) { x.setAttribute('aria-selected', 'false'); });
-        o.setAttribute('aria-selected', 'true');
-        sel.classList.remove('open');
-      });
-    });
-  });
-  function closeAll() { selects.forEach(function (s) { s.classList.remove('open'); }); }
-  document.addEventListener('click', closeAll);
-
   // Accordions
   document.querySelectorAll('[data-acc]').forEach(function (acc) {
     acc.querySelectorAll('.acc-row').forEach(function (row) {
@@ -147,32 +123,6 @@
       });
     });
   });
-
-  // Interactive concept scale (− 0 +)
-  var scale = document.getElementById('scale');
-  if (scale) {
-    var desc = document.getElementById('scaleDesc');
-    var dTitle = desc.querySelector('[data-desc-title]');
-    var dText = desc.querySelector('[data-desc-text]');
-    var nodes = scale.querySelectorAll('.scale-node');
-    var CENTER = nodes[1];
-    var activate = function (node) {
-      nodes.forEach(function (n) { n.classList.remove('on'); });
-      node.classList.add('on');
-      desc.classList.add('swap');
-      setTimeout(function () {
-        dTitle.textContent = node.getAttribute('data-title');
-        dText.textContent = node.getAttribute('data-desc');
-        desc.classList.remove('swap');
-      }, 200);
-    };
-    nodes.forEach(function (n) {
-      n.addEventListener('mouseenter', function () { activate(n); });
-      n.addEventListener('focus', function () { activate(n); });
-      n.addEventListener('click', function () { activate(n); });
-    });
-    scale.addEventListener('mouseleave', function () { activate(CENTER); });
-  }
 
   // Simple plot galleries (plain scrolling frames, click / arrows)
   document.querySelectorAll('[data-gal]').forEach(function (gal) {
@@ -208,48 +158,6 @@
       var open = plot.classList.toggle('open');
       btn.childNodes[0].nodeValue = open ? 'Свернуть ' : 'Подробнее о домике ';
     });
-  });
-
-  // iOS-style coverflow galleries: центр — крупно, соседние мельче по бокам
-  document.querySelectorAll('[data-gallery]').forEach(function (gal) {
-    var frame = gal.querySelector('.gal-frame');
-    if (!frame) return;
-    var slides = Array.prototype.slice.call(frame.querySelectorAll('.gslide'));
-    var caps = Array.prototype.slice.call(gal.querySelectorAll('.gcap'));
-    var n = slides.length;
-    var idx = Math.max(0, slides.findIndex(function (s) { return s.classList.contains('active'); }));
-    var seen = false;
-    var loadVisible = function () {
-      [idx, (idx - 1 + n) % n, (idx + 1) % n].forEach(function (i) {
-        var im = slides[i] && slides[i].querySelector('img');
-        if (im && im.getAttribute('loading') === 'lazy') im.setAttribute('loading', 'eager');
-      });
-    };
-    var render = function () {
-      var prevI = (idx - 1 + n) % n, nextI = (idx + 1) % n;
-      slides.forEach(function (s, i) {
-        s.classList.remove('active', 'side', 'left', 'right');
-        if (i === idx) { s.style.display = 'flex'; s.classList.add('active'); }
-        else if (i === prevI) { s.style.display = 'flex'; s.classList.add('side', 'left'); }
-        else if (i === nextI) { s.style.display = 'flex'; s.classList.add('side', 'right'); }
-        else { s.style.display = 'none'; }
-      });
-      caps.forEach(function (c, i) { c.classList.toggle('active', i === idx); });
-      if (seen) loadVisible();
-    };
-    var go = function (d) { idx = (idx + d + n) % n; render(); };
-    slides.forEach(function (s, i) { s.addEventListener('click', function () { if (i !== idx) { idx = i; render(); } }); });
-    var prev = gal.querySelector('[data-prev]'), next = gal.querySelector('[data-next]');
-    if (prev) prev.addEventListener('click', function () { go(-1); });
-    if (next) next.addEventListener('click', function () { go(1); });
-    var x0 = null;
-    frame.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
-    frame.addEventListener('touchend', function (e) { if (x0 == null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1); x0 = null; }, { passive: true });
-    window.addEventListener('resize', render);
-    render();
-    if (window.IntersectionObserver) {
-      new IntersectionObserver(function (es, ob) { if (es[0].isIntersecting) { seen = true; loadVisible(); ob.disconnect(); } }, { rootMargin: '300px' }).observe(gal);
-    } else { seen = true; loadVisible(); }
   });
 
   // Universal gallery: scroll-snap carousel, full photo (no crop), synced captions
@@ -314,9 +222,6 @@
     next && next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
   }
 })();
-
-// line icons
-if(window.lucide&&window.lucide.createIcons){lucide.createIcons();}
 
 // Cookie strip — stores consent in a real first-party cookie (so «мы используем cookie» is accurate)
 (function(){

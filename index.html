@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Середина — домики для отдыха под Ярославлем</title>
 <meta name="description" content="«Середина» — два участка с домиками для короткого отдыха в 10 км от Ярославля. Сауна, мангальная зона, тишина и природа. Приезжайте выдохнуть.">
 <link rel="canonical" href="https://shbshv-czec.github.io/seredina76/">
@@ -24,13 +25,17 @@
 <meta name="twitter:title" content="Середина — домики для отдыха под Ярославлем">
 <meta name="twitter:description" content="Сауна, мангал, тишина и природа в 10 км от Ярославля. Весь участок только ваш.">
 <meta name="twitter:image" content="https://shbshv-czec.github.io/seredina76/assets/hero-terrace.jpg">
-<link rel="stylesheet" href="site.css?v=14"></head>
+<!-- Heading/body faces used above the fold — preloaded so text renders in one pass -->
+<link rel="preload" href="assets/fonts/manrope-800-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/manrope-400-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/manrope-300-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css?v=15"></head>
 <body>
 
 <div class="topbar" id="topbar">
 <!-- Announcement -->
 <div class="announce" id="announce">
-  <span>До Волги — 5 минут, до Ярославля — 15. Забронируйте участок и оставайтесь наедине с природой.</span>
+  <span>До Волги — 5 минут, до Ярославля — 15.<span class="annc-more"> Забронируйте участок и оставайтесь наедине с природой.</span></span>
   <a class="cta" href="#domiki">Выбрать домик <span aria-hidden="true">→</span></a>
   <button class="x" id="announceX" aria-label="Закрыть">×</button>
 </div>
@@ -62,8 +67,8 @@
   <h1 class="h-hero hero-head reveal">Остановитесь <br><span class="pine">в середине</span></h1>
   <p class="lead hero-sub reveal d1">Домики для отдыха в 10 км от Ярославля. <br>Без долгой дороги и сложных планов — просто приехать, <br>выдохнуть и прийти в себя.</p>
   <div class="hero-media reveal d2">
-    <div class="frame tall"><img src="assets/hero-terrace.webp?v=2" alt="Зона отдыха с креслами и мангалом на участке домиков «Середина» под Ярославлем" width="1280" height="853"></div>
-    <div class="frame short"><img src="assets/hero-bed.webp?v=2" alt="Спальня в домике для отдыха «Середина» под Ярославлем" width="853" height="1280"></div>
+    <div class="frame tall"><img src="assets/hero-terrace.webp?v=2" alt="Зона отдыха с креслами и мангалом на участке домиков «Середина» под Ярославлем" width="1600" height="1067" fetchpriority="high"></div>
+    <div class="frame short"><img src="assets/hero-bed.webp?v=2" alt="Спальня в домике для отдыха «Середина» под Ярославлем" width="1200" height="1800"></div>
   </div>
 </section>
 
@@ -317,7 +322,7 @@
 <!-- Location -->
 <section class="band container" id="lokatsiya">
   <div class="loc-grid">
-    <div class="loc-map reveal"><iframe src="https://yandex.ru/map-widget/v1/?ll=40.101477%2C57.582794&z=15&pt=40.101477%2C57.582794%2Cpm2rdm" width="100%" height="100%" frameborder="0" allowfullscreen="true" style="position:absolute;inset:0;border:0" title="Карта — деревня Семёново"></iframe></div>
+    <div class="loc-map reveal"><iframe src="https://yandex.ru/map-widget/v1/?ll=40.101477%2C57.582794&z=15&pt=40.101477%2C57.582794%2Cpm2rdm" width="100%" height="100%" loading="lazy" frameborder="0" allowfullscreen="true" style="position:absolute;inset:0;border:0" title="Карта — деревня Семёново"></iframe></div>
     <div class="loc-facts reveal d1">
       <div class="eyebrow">Локация</div>
       <h2 class="h2">10 км от Ярославля</h2>
@@ -365,7 +370,7 @@
         <li><span class="dash">—</span> Скалодром и батут для взрослых «Красный Маяк»</li>
         <li><span class="dash">—</span> Ярославский кёрлинг-клуб</li>
         <li><span class="dash">—</span> Падел (ракеточный спорт) — Padel Star</li>
-        <li><span class="dash">—</span> Фотосъёмка прямо в домиках или в лесу — фотограф <a href="https://vk.ru/foto.ollin" target="_blank" rel="noopener">Ольга Бирюзова</a></li>
+        <li><span class="dash">—</span> <span>Фотосъёмка прямо в домиках или в лесу — фотограф <a href="https://vk.ru/foto.ollin" target="_blank" rel="noopener">Ольга Бирюзова</a></span></li>
       </ul>
       <h3 class="h3" style="margin-top:36px">Вкусные места</h3>
       <ul class="idea-list">
@@ -444,7 +449,7 @@
 
 <script type="module" src="https://homereserve.ru/widget.js"></script>
 <script type="module">window.homereserve.initWidgetSearch({"token":"htXBBOx6J7"})</script>
-<script defer src="site.js?v=10"></script><script type="application/ld+json">
+<script defer src="site.js?v=11"></script><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LodgingBusiness",
