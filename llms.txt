@@ -26,6 +26,6 @@
 - Онлайн-бронирование — на сайте; также доступно на Авито, Суточно.ру, Циан и Островок.
 
 ## Страницы
-- Главная: https://shbshv-czec.github.io/seredina76/
-- Договор оферты: https://shbshv-czec.github.io/seredina76/oferta.html
-- Политика конфиденциальности: https://shbshv-czec.github.io/seredina76/politika.html
+- Главная: https://seredina76.ru/
+- Договор оферты: https://seredina76.ru/oferta.html
+- Политика конфиденциальности: https://seredina76.ru/politika.html
