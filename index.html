@@ -494,10 +494,20 @@
       window.homereserve.initWidgetSearch({ token: "htXBBOx6J7" });
       inited = true;
     }
-    if (mounted()) { fb.hidden = true; return; }
+    if (mounted()) { fb.hidden = true; tidyHash(); return; }
     if (Date.now() - started > 8000) fb.hidden = false;
     if (Date.now() - started < 300000) setTimeout(tick, 300);
   })();
+  /* The widget's router appends a bare "#/" to the address. replaceState
+     doesn't fire hashchange, so stripping it never remounts the widget.
+     Re-check a few times — the router may add it shortly after mount. */
+  function tidyHash() {
+    [0, 1000, 3000].forEach(function (d) {
+      setTimeout(function () {
+        if (location.hash === '#/') history.replaceState(null, '', location.pathname + location.search);
+      }, d);
+    });
+  }
 })();
 </script>
 <script defer src="site.js?v=11"></script><script type="application/ld+json">
