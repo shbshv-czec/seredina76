@@ -26,11 +26,16 @@
 <meta name="twitter:title" content="Середина — домики для отдыха под Ярославлем">
 <meta name="twitter:description" content="Сауна, мангал, тишина и природа в 10 км от Ярославля. Весь участок только ваш.">
 <meta name="twitter:image" content="https://seredina76.ru/assets/og-cover.jpg">
+<!-- The booking widget script is heavy (~1.7 MB) and comes from homereserve's
+     server: connect early and start the download from the head, not body end -->
+<link rel="preconnect" href="https://homereserve.ru" crossorigin>
+<link rel="preconnect" href="https://homereserve.ru">
+<script type="module" src="https://homereserve.ru/widget.js"></script>
 <!-- Heading/body faces used above the fold — preloaded so text renders in one pass -->
 <link rel="preload" href="assets/fonts/manrope-800-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/manrope-400-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/manrope-300-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="site.css?v=17">
+<link rel="stylesheet" href="site.css?v=18">
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
@@ -92,6 +97,10 @@
   <div class="hr-widget-block reveal">
     <p class="hr-note"><span class="pct">−20%</span>Прямое бронирование выгоднее: здесь, на сайте, на 20% дешевле, чем на площадках</p>
     <div id="hr-widget"></div>
+    <div class="hr-fallback" id="hrFallback" hidden>
+      <p>Форма бронирования ещё загружается. Если она не появилась — забронируйте напрямую, скидка −20% сохранится:</p>
+      <div class="hr-fallback-actions"><a class="btn btn-dark" href="tel:+79807006313">+7 980 700-63-13</a><a class="btn btn-ghost" href="https://vk.ru/seredina_76" target="_blank" rel="noopener">Написать ВКонтакте</a></div>
+    </div>
   </div>
 </section>
 
@@ -467,19 +476,27 @@
   <button class="cookie-ok" id="cookieOk" type="button">Ок</button>
 </div>
 
-<script type="module" src="https://homereserve.ru/widget.js"></script>
 <script>
-/* The widget script loads from homereserve.ru and can arrive later than this
-   inline code runs. Init blindly and the widget never mounts (the bug where
-   the booking form "disappears"). So: wait for it, retrying for up to 30 s. */
+/* The widget script (loaded from the <head>) is ~1.7 MB and comes from
+   homereserve's server — on slow connections it arrives seconds after this
+   code runs. Init blindly and the form never mounts (the "disappearing
+   widget" bug). So: poll until it's ready (up to 5 min), and if the form
+   still isn't on screen after 8 s, reveal direct-contact buttons so the
+   booking block is never a dead end. */
 (function () {
-  var tries = 0;
-  (function mount() {
-    if (window.homereserve && window.homereserve.initWidgetSearch) {
+  var box = document.getElementById('hr-widget');
+  var fb = document.getElementById('hrFallback');
+  var started = Date.now();
+  var inited = false;
+  function mounted() { return box.childElementCount > 0; }
+  (function tick() {
+    if (!inited && window.homereserve && window.homereserve.initWidgetSearch) {
       window.homereserve.initWidgetSearch({ token: "htXBBOx6J7" });
-    } else if (tries++ < 300) {
-      setTimeout(mount, 100);
+      inited = true;
     }
+    if (mounted()) { fb.hidden = true; return; }
+    if (Date.now() - started > 8000) fb.hidden = false;
+    if (Date.now() - started < 300000) setTimeout(tick, 300);
   })();
 })();
 </script>
