@@ -1,0 +1,25 @@
+# seredina76.ru — Apache config (GitHub Pages mirror ignores this file)
+
+# --- Redirects: http → https, www → apex ---
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/\.well-known/
+RewriteCond %{HTTP:X-Forwarded-Proto} =http [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ https://seredina76.ru/$1 [R=301,L]
+
+# --- Caching: instant HTML updates, long-lived static assets (?v=N busts) ---
+<IfModule mod_headers.c>
+<FilesMatch "\.html$">
+Header set Cache-Control "no-cache, must-revalidate"
+</FilesMatch>
+<FilesMatch "\.(webp|jpg|png|svg|woff2|css|js)$">
+Header set Cache-Control "public, max-age=604800"
+</FilesMatch>
+
+# --- Security headers ---
+Header always set Strict-Transport-Security "max-age=15552000"
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+</IfModule>
