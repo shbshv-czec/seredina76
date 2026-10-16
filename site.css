@@ -376,3 +376,161 @@ body #hr-widget a.button-primary.big{border-radius:999px!important;padding-left:
 .spec-val.yes{display:flex;justify-content:center}
 .spec-val.yes svg{width:20px;height:20px;stroke:var(--charcoal);stroke-width:2}
 @media(max-width:560px){.spec-feat{gap:9px}.spec-feat svg{width:20px;height:20px}}
+
+/* ===================================================================
+   NY — Новогодний раздел и праздничные элементы (убрать после 14 января)
+   =================================================================== */
+:root{
+  --ny-pine:#1e5631; --ny-pine-dark:#133b21;
+  --ny-red:#c0392b; --ny-gold:#f2b84b; --ny-warm:#ffe9b8;
+  --ny-cream:#fff7ea; --ny-glow:rgba(242,184,75,.55);
+}
+
+/* ---- Праздничная кнопка ---- */
+.ny-btn{position:relative;background:var(--ny-red);color:var(--ny-cream);overflow:visible;
+  box-shadow:0 0 0 2px var(--ny-gold),0 6px 22px var(--ny-glow);animation:ny-btn-pulse 3s var(--ease) infinite}
+.ny-btn:hover{background:#d14233;color:#fff;transform:translateY(-2px);text-decoration:none;
+  box-shadow:0 0 0 2px var(--ny-gold),0 10px 30px rgba(242,184,75,.8)}
+.ny-btn .ny-star{width:18px;height:18px;flex:0 0 auto;color:var(--ny-gold);filter:drop-shadow(0 0 3px var(--ny-glow));transition:transform .4s var(--ease)}
+.ny-btn:hover .ny-star{transform:rotate(72deg)}
+.ny-btn.ny-sm{padding:11px 20px;font-size:15px}
+/* мини-гирлянда по верхнему краю кнопки */
+.ny-btn::before{content:"";position:absolute;left:14px;right:14px;top:-3px;height:4px;border-radius:4px;
+  background-image:radial-gradient(circle,var(--ny-warm) 42%,transparent 46%);
+  background-size:14px 4px;background-repeat:repeat-x;animation:ny-btn-run 1.6s linear infinite;pointer-events:none}
+@keyframes ny-btn-pulse{0%,100%{box-shadow:0 0 0 2px var(--ny-gold),0 6px 22px var(--ny-glow)}50%{box-shadow:0 0 0 2px var(--ny-gold),0 8px 30px rgba(242,184,75,.85)}}
+@keyframes ny-btn-run{0%{background-position:0 0}100%{background-position:14px 0}}
+
+/* ---- Пункт меню «Новый год» ---- */
+.ny-nav{color:var(--ny-red)!important;display:inline-flex;align-items:center;gap:6px;font-weight:600}
+.ny-nav .ny-star{width:15px;height:15px;color:var(--ny-gold);animation:ny-twinkle 2.4s ease-in-out infinite}
+@keyframes ny-twinkle{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.82)}}
+
+/* ---- Строка-приглашение у брони ---- */
+.ny-booking-cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin-top:16px;padding-top:14px;border-top:1px dashed rgba(192,57,43,.35)}
+.ny-booking-cta p{font-size:15px;line-height:1.4;color:var(--charcoal);margin:0;max-width:46ch}
+
+/* ---- Плашка-плита раздела ---- */
+.ny-plate{position:relative;overflow:hidden;border-radius:var(--r-hero);
+  background:linear-gradient(160deg,var(--ny-pine),var(--ny-pine-dark));
+  color:var(--ny-cream);padding:clamp(54px,6vw,86px) clamp(22px,4vw,64px) clamp(40px,5vw,64px);
+  isolation:isolate}
+/* мерцающие пятна тёплого света (боке) */
+.ny-plate::before,.ny-plate::after{content:"";position:absolute;border-radius:50%;filter:blur(55px);z-index:0;pointer-events:none}
+.ny-plate::before{width:340px;height:340px;top:-60px;right:-40px;background:var(--ny-glow);animation:ny-boke 7s ease-in-out infinite}
+.ny-plate::after{width:280px;height:280px;bottom:-50px;left:-30px;background:rgba(192,57,43,.35);animation:ny-boke 9s ease-in-out infinite reverse}
+@keyframes ny-boke{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:.85;transform:scale(1.15)}}
+.ny-plate>*{position:relative;z-index:2}
+
+/* ---- Гирлянда ---- */
+.ny-garland{position:absolute;left:0;right:0;top:0;height:54px;z-index:3;pointer-events:none}
+.ny-garland .wire{position:absolute;inset:0;width:100%;height:100%}
+.ny-garland .wire path{fill:none;stroke:#0e2d19;stroke-width:2.2}
+.ny-bulb{position:absolute;top:20px;width:11px;height:15px;border-radius:50% 50% 48% 48%/42% 42% 58% 58%;
+  transform-origin:top center;animation:ny-blink 2s ease-in-out infinite}
+.ny-bulb::after{content:"";position:absolute;top:-4px;left:50%;transform:translateX(-50%);width:5px;height:4px;border-radius:1.5px;background:#3a3a3a}
+.ny-bulb.c-red{background:var(--ny-red);box-shadow:0 0 9px 1px rgba(192,57,43,.9)}
+.ny-bulb.c-gold{background:var(--ny-gold);box-shadow:0 0 9px 1px rgba(242,184,75,.95)}
+.ny-bulb.c-warm{background:var(--ny-warm);box-shadow:0 0 9px 1px rgba(255,233,184,.95)}
+.ny-bulb.c-green{background:#5fd27a;box-shadow:0 0 9px 1px rgba(95,210,122,.9)}
+@keyframes ny-blink{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* ---- Ёлочные шары ---- */
+.ny-orn{position:absolute;top:30px;z-index:3;width:2px;height:46px;background:#0e2d19;transform-origin:top center;animation:ny-sway 4s ease-in-out infinite;pointer-events:none}
+.ny-orn.left{left:9%}.ny-orn.right{right:9%;animation-delay:-2s}
+.ny-orn b{position:absolute;left:50%;bottom:-26px;transform:translateX(-50%);width:28px;height:28px;border-radius:50%;display:block}
+.ny-orn b::before{content:"";position:absolute;top:-5px;left:50%;transform:translateX(-50%);width:7px;height:6px;border-radius:2px;background:var(--ny-gold)}
+.ny-orn.left b{background:radial-gradient(circle at 35% 30%,#e8574a,var(--ny-red));box-shadow:0 0 14px rgba(192,57,43,.7)}
+.ny-orn.right b{background:radial-gradient(circle at 35% 30%,#ffd27a,var(--ny-gold));box-shadow:0 0 14px rgba(242,184,75,.75)}
+@keyframes ny-sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+
+/* ---- Снег ---- */
+.ny-snow{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.ny-flake{position:absolute;top:-12px;color:#fff;opacity:.85;animation:ny-fall linear infinite;will-change:transform}
+@keyframes ny-fall{0%{transform:translateY(-12px) translateX(0) rotate(0)}100%{transform:translateY(680px) translateX(24px) rotate(240deg)}}
+
+/* ---- Типографика раздела ---- */
+.ny-eyebrow{font-family:var(--font-body);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ny-gold)}
+.ny-plate h2,.ny-plate h3{color:var(--ny-cream)}
+.ny-plate .h2{margin-top:12px}
+.ny-plate p{color:var(--ny-cream)}
+.ny-accent{display:block;font-style:italic;font-weight:700;color:var(--ny-gold);font-size:clamp(20px,2.4vw,30px);line-height:1.2;margin:18px 0 22px;letter-spacing:-.01em}
+
+/* ---- Вступление: 2 колонки ---- */
+.ny-intro{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(26px,4vw,56px);align-items:center;margin-top:clamp(20px,3vw,34px)}
+.ny-intro-text p{font-size:clamp(16px,1.2vw,18px);line-height:1.6;margin-bottom:14px}
+/* Карусель */
+.ny-carousel{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:2/3;border:2px solid var(--ny-gold);box-shadow:0 14px 40px rgba(0,0,0,.35)}
+.ny-carousel .ny-slide{position:absolute;inset:0;opacity:0;transition:opacity 1s var(--ease)}
+.ny-carousel .ny-slide.is-active{opacity:1}
+.ny-carousel .ny-slide img{width:100%;height:100%;object-fit:cover}
+.ny-dots{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:8px;z-index:2}
+.ny-dots button{width:9px;height:9px;border-radius:50%;border:none;background:rgba(255,247,234,.5);cursor:pointer;padding:0;transition:background .3s,transform .3s}
+.ny-dots button.is-active{background:var(--ny-gold);transform:scale(1.25)}
+
+/* ---- Карточки раздела (светлые) ---- */
+.ny-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px);margin-top:clamp(20px,3vw,30px)}
+.ny-card{background:var(--ny-cream);color:var(--charcoal);border-radius:var(--r-card);border:1px solid rgba(242,184,75,.55);
+  box-shadow:0 10px 30px rgba(0,0,0,.25);overflow:hidden;display:flex;flex-direction:column}
+.ny-card .ny-card-img{aspect-ratio:3/4;overflow:hidden}
+.ny-card .ny-card-img img{width:100%;height:100%;object-fit:cover}
+.ny-card .ny-card-body{padding:clamp(16px,1.6vw,22px)}
+.ny-card h3{color:var(--charcoal);font-size:clamp(19px,1.5vw,22px);font-weight:700;line-height:1.15;letter-spacing:-.01em}
+.ny-card p{color:var(--charcoal);font-size:15px;line-height:1.5;margin-top:10px}
+
+.ny-sub{margin-top:clamp(40px,5vw,62px)}
+.ny-sub h3{font-size:clamp(23px,2.6vw,34px);font-weight:800;letter-spacing:-.02em;line-height:1.1}
+
+/* ---- Выбор участка: 2 карточки ---- */
+.ny-plots{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,24px);margin-top:clamp(18px,2.4vw,26px)}
+.ny-plot{background:var(--ny-cream);color:var(--charcoal);border-radius:var(--r-card);border:1px solid rgba(242,184,75,.55);box-shadow:0 10px 30px rgba(0,0,0,.25);overflow:hidden;display:flex;flex-direction:column}
+.ny-plot .ny-plot-img{aspect-ratio:4/3;overflow:hidden}
+.ny-plot .ny-plot-img img{width:100%;height:100%;object-fit:cover}
+.ny-plot .ny-plot-body{padding:clamp(16px,1.8vw,24px);display:flex;flex-direction:column;gap:10px;flex:1}
+.ny-plot h3{color:var(--charcoal);font-size:clamp(22px,2vw,28px);font-weight:800;letter-spacing:-.02em}
+.ny-plot p{color:var(--charcoal);font-size:15px;line-height:1.5}
+.ny-chips{display:flex;flex-wrap:wrap;gap:6px 8px}
+.ny-chip{display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.01em;color:#8a5a12;background:rgba(242,184,75,.22);border:1px solid rgba(242,184,75,.6);border-radius:var(--r-pill);padding:5px 12px}
+.ny-plot-actions{margin-top:auto;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding-top:6px}
+.ny-plot-actions a.ny-more{color:var(--ny-pine);font-weight:600;font-size:15px}
+
+/* ---- Акцент-плашка под участками ---- */
+.ny-note{display:flex;align-items:flex-start;gap:12px;margin-top:clamp(18px,2.4vw,26px);padding:16px 20px;border-radius:var(--r-card);
+  background:rgba(255,247,234,.1);border:1px solid rgba(242,184,75,.5)}
+.ny-note .ny-star{width:22px;height:22px;flex:0 0 auto;color:var(--ny-gold);margin-top:2px;filter:drop-shadow(0 0 4px var(--ny-glow))}
+.ny-note p{margin:0;font-size:clamp(15px,1.15vw,17px);line-height:1.5;color:var(--ny-cream)}
+.ny-note strong{color:var(--ny-warm)}
+.ny-line{margin-top:14px;color:var(--ny-cream);font-size:15px;line-height:1.5;opacity:.95}
+
+/* ---- «Чем заняться» ---- */
+.ny-todo{list-style:none;margin:clamp(16px,2vw,22px) 0 0;display:grid;gap:12px;max-width:72ch}
+.ny-todo li{position:relative;padding-left:30px;font-size:clamp(15px,1.2vw,18px);line-height:1.5;color:var(--ny-cream)}
+.ny-todo li .ny-star{position:absolute;left:0;top:3px;width:18px;height:18px;color:var(--ny-gold)}
+.ny-todo li a{color:var(--ny-warm);text-decoration:underline;text-underline-offset:3px}
+
+/* ---- FAQ-аккордеон раздела ---- */
+.ny-faq{margin-top:clamp(16px,2vw,24px);max-width:900px}
+.ny-faq .acc-row{background:var(--ny-cream);border-radius:14px;margin-bottom:10px;border:1px solid rgba(242,184,75,.5);overflow:hidden}
+.ny-faq .acc-row .head{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 20px;background:none;border:none;cursor:pointer;text-align:left}
+.ny-faq .acc-row .head .t{font-weight:700;font-size:clamp(16px,1.3vw,18px);color:var(--charcoal);letter-spacing:-.01em;line-height:1.3}
+.ny-faq .acc-row .head .pm{font-size:24px;line-height:1;color:var(--ny-red);flex:0 0 auto;transition:transform .3s var(--ease)}
+.ny-faq .acc-row.open .head .pm{transform:rotate(45deg)}
+.ny-faq .acc-row .panel{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.ny-faq .acc-row .panel .inner{padding:0 20px 18px;color:var(--charcoal);font-size:15.5px;line-height:1.55}
+.ny-faq-cta{margin-top:clamp(18px,2.4vw,26px)}
+
+/* ---- Адаптив раздела ---- */
+@media(max-width:860px){
+  .ny-intro{grid-template-columns:1fr;gap:24px}
+  .ny-carousel{max-width:360px;margin:0 auto;width:100%}
+  .ny-cards{grid-template-columns:1fr;max-width:420px}
+  .ny-plots{grid-template-columns:1fr;max-width:460px}
+  .ny-orn.left{left:5%}.ny-orn.right{right:5%}
+}
+
+/* ---- Reduced motion: гирлянда горит статично, мигание/качание/снег off ---- */
+@media(prefers-reduced-motion:reduce){
+  .ny-bulb,.ny-orn,.ny-plate::before,.ny-plate::after,.ny-btn,.ny-btn::before,.ny-nav .ny-star,.ny-note .ny-star{animation:none}
+  .ny-bulb{opacity:1}
+  .ny-snow{display:none}
+}

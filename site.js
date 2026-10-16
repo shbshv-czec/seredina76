@@ -233,3 +233,69 @@
   if(hasCookie(NAME)) c.classList.add('hide');
   ok&&ok.addEventListener('click',function(){ c.classList.add('hide'); setCookie(NAME,'1',365); });
 })();
+
+/* ===================================================================
+   NY — новогодние интерактивы (карусель + снег). Убрать после 14 января.
+   =================================================================== */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Карусель новогоднего раздела: плавное затухание, авто 5с, пауза при наведении, свайп, точки
+  document.querySelectorAll('[data-ny-carousel]').forEach(function (car) {
+    var slides = Array.prototype.slice.call(car.querySelectorAll('.ny-slide'));
+    var dotsBox = car.querySelector('[data-ny-dots]');
+    if (slides.length < 2) return;
+    var i = 0, timer = null;
+    var loadImg = function (k) {
+      var im = slides[k] && slides[k].querySelector('img');
+      if (im && !im.getAttribute('src') && im.dataset.src) im.src = im.dataset.src;
+    };
+    var dots = [];
+    if (dotsBox) slides.forEach(function (s, k) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', 'Фото ' + (k + 1));
+      if (k === 0) b.className = 'is-active';
+      b.addEventListener('click', function () { go(k); reset(); });
+      dotsBox.appendChild(b); dots.push(b);
+    });
+    function go(n) {
+      i = (n + slides.length) % slides.length;
+      slides.forEach(function (s, k) { s.classList.toggle('is-active', k === i); });
+      dots.forEach(function (d, k) { d.classList.toggle('is-active', k === i); });
+      loadImg(i); loadImg((i + 1) % slides.length);
+    }
+    function start() { if (!timer) timer = setInterval(function () { go(i + 1); }, 5000); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function reset() { stop(); start(); }
+    car.addEventListener('mouseenter', stop);
+    car.addEventListener('mouseleave', start);
+    // Свайп
+    var x0 = null;
+    car.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; stop(); }, { passive: true });
+    car.addEventListener('touchend', function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 40) go(i + (dx < 0 ? 1 : -1));
+      x0 = null; start();
+    }, { passive: true });
+    loadImg(0); loadImg(1);
+    start();
+  });
+
+  // Снег внутри раздела (меньше на мобильном, выключен при reduce-motion)
+  if (!reduce) document.querySelectorAll('[data-ny-snow]').forEach(function (box) {
+    var n = window.innerWidth < 760 ? 7 : 14;
+    for (var k = 0; k < n; k++) {
+      var f = document.createElement('span');
+      f.className = 'ny-flake';
+      f.textContent = '❄';
+      f.style.left = (Math.random() * 100) + '%';
+      f.style.fontSize = (8 + Math.random() * 12).toFixed(0) + 'px';
+      f.style.opacity = (0.5 + Math.random() * 0.4).toFixed(2);
+      f.style.animationDuration = (7 + Math.random() * 7).toFixed(1) + 's';
+      f.style.animationDelay = (-Math.random() * 10).toFixed(1) + 's';
+      box.appendChild(f);
+    }
+  });
+})();
