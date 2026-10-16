@@ -389,13 +389,13 @@ body #hr-widget a.button-primary.big{border-radius:999px!important;padding-left:
 /* ---- Праздничная кнопка (красная, без тени и бегущей линии, иконка-ёлка) ---- */
 .ny-btn{background:var(--ny-red);color:var(--ny-cream)}
 .ny-btn:hover{background:#a93226;color:#fff;text-decoration:none}
-.ny-btn .ny-tree{width:19px;height:20px;flex:0 0 auto}
+.ny-btn .ny-tree{width:28px;height:29px;flex:0 0 auto}
 .ny-btn.ny-sm{padding:11px 20px;font-size:15px}
-.ny-btn.ny-sm .ny-tree{width:17px;height:18px}
+.ny-btn.ny-sm .ny-tree{width:24px;height:25px}
 
 /* ---- Пункт меню «Новый год» ---- */
 .ny-nav{color:var(--ny-red)!important;display:inline-flex;align-items:center;gap:6px;font-weight:600}
-.ny-nav .ny-tree{width:16px;height:17px;flex:0 0 auto}
+.ny-nav .ny-tree{width:22px;height:23px;flex:0 0 auto}
 
 /* ---- Плашка-плита раздела ---- */
 .ny-plate{position:relative;overflow:hidden;border-radius:var(--r-hero);
@@ -420,16 +420,8 @@ body #hr-widget a.button-primary.big{border-radius:999px!important;padding-left:
 .ny-bulb.c-gold{background:var(--ny-gold);box-shadow:0 0 9px 1px rgba(242,184,75,.95)}
 .ny-bulb.c-warm{background:var(--ny-warm);box-shadow:0 0 9px 1px rgba(255,233,184,.95)}
 .ny-bulb.c-green{background:#5fd27a;box-shadow:0 0 9px 1px rgba(95,210,122,.9)}
-@keyframes ny-blink{0%,100%{opacity:1}50%{opacity:.4}}
-
-/* ---- Ёлочные шары ---- */
-.ny-orn{position:absolute;top:30px;z-index:3;width:2px;height:46px;background:#0e2d19;transform-origin:top center;animation:ny-sway 4s ease-in-out infinite;pointer-events:none}
-.ny-orn.left{left:9%}.ny-orn.right{right:9%;animation-delay:-2s}
-.ny-orn b{position:absolute;left:50%;bottom:-26px;transform:translateX(-50%);width:28px;height:28px;border-radius:50%;display:block}
-.ny-orn b::before{content:"";position:absolute;top:-5px;left:50%;transform:translateX(-50%);width:7px;height:6px;border-radius:2px;background:var(--ny-gold)}
-.ny-orn.left b{background:radial-gradient(circle at 35% 30%,#e8574a,var(--ny-red));box-shadow:0 0 14px rgba(192,57,43,.7)}
-.ny-orn.right b{background:radial-gradient(circle at 35% 30%,#ffd27a,var(--ny-gold));box-shadow:0 0 14px rgba(242,184,75,.75)}
-@keyframes ny-sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+/* Лампочки гаснут глубже и у каждой свой период (задаётся инлайном) — огоньки загораются и гаснут вразнобой, без ряби */
+@keyframes ny-blink{0%,100%{opacity:1}50%{opacity:.18}}
 
 /* ---- Снег ---- */
 .ny-snow{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
@@ -441,7 +433,7 @@ body #hr-widget a.button-primary.big{border-radius:999px!important;padding-left:
 .ny-plate h2,.ny-plate h3{color:var(--ny-cream)}
 .ny-plate .h2{margin:12px 0 18px}
 .ny-plate p{color:var(--ny-cream)}
-.ny-accent{display:block;font-style:italic;font-weight:700;color:var(--ny-gold);font-size:clamp(20px,2.4vw,30px);line-height:1.2;margin:18px 0 22px;letter-spacing:-.01em}
+.ny-accent{display:block;font-weight:700;color:var(--ny-gold);font-size:clamp(20px,2.4vw,30px);line-height:1.2;margin:18px 0 22px;letter-spacing:-.01em}
 
 /* ---- Вступление: 2 колонки ---- */
 .ny-intro{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(26px,4vw,56px);align-items:center;margin-top:clamp(20px,3vw,34px)}
@@ -481,13 +473,11 @@ body #hr-widget a.button-primary.big{border-radius:999px!important;padding-left:
 .ny-plot-actions{margin-top:auto;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding-top:6px}
 .ny-plot-actions a.ny-more{color:var(--ny-pine);font-weight:600;font-size:15px}
 
-/* ---- Акцент-плашка под участками ---- */
-.ny-note{display:flex;align-items:flex-start;gap:12px;margin-top:clamp(18px,2.4vw,26px);padding:16px 20px;border-radius:var(--r-card);
-  background:rgba(255,247,234,.1);border:1px solid rgba(242,184,75,.5)}
-.ny-note .ny-tree{width:24px;height:25px;flex:0 0 auto;margin-top:1px}
-.ny-note p{margin:0;font-size:clamp(15px,1.15vw,17px);line-height:1.5;color:var(--ny-cream)}
-.ny-note strong{color:var(--ny-warm)}
-.ny-line{margin-top:14px;color:var(--ny-cream);font-size:15px;line-height:1.5;opacity:.95}
+/* ---- Акцентная фраза под участками ---- */
+.ny-closing{margin-top:clamp(24px,3.2vw,38px)}
+.ny-closing p{color:var(--ny-cream);font-size:clamp(18px,1.9vw,25px);font-weight:500;line-height:1.4;letter-spacing:-.01em;max-width:60ch}
+.ny-closing p+p{margin-top:14px}
+.ny-closing strong{color:var(--ny-gold);font-weight:700}
 
 /* ---- «Чем заняться» ---- */
 .ny-todo{list-style:none;margin:clamp(16px,2vw,22px) 0 0;display:grid;gap:12px;max-width:72ch}
@@ -511,12 +501,11 @@ body #hr-widget a.button-primary.big{border-radius:999px!important;padding-left:
   .ny-carousel{max-width:360px;margin:0 auto;width:100%}
   .ny-cards{grid-template-columns:1fr;max-width:420px}
   .ny-plots{grid-template-columns:1fr;max-width:460px}
-  .ny-orn.left{left:5%}.ny-orn.right{right:5%}
 }
 
 /* ---- Reduced motion: гирлянда горит статично, мигание/качание/снег off ---- */
 @media(prefers-reduced-motion:reduce){
-  .ny-bulb,.ny-orn,.ny-plate::before,.ny-plate::after{animation:none}
+  .ny-bulb,.ny-plate::before,.ny-plate::after{animation:none}
   .ny-bulb{opacity:1}
   .ny-snow{display:none}
 }
