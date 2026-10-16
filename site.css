@@ -392,7 +392,7 @@ body #hr-widget a.button-primary.big{border-radius:999px!important;padding-left:
 }
 
 /* ---- Праздничная кнопка (красная, без тени и бегущей линии, иконка-ёлка) ---- */
-.ny-btn{background:var(--ny-red);color:var(--ny-cream)}
+.ny-btn{background:var(--ny-red);color:var(--ny-cream);max-width:100%;white-space:normal;text-align:center;line-height:1.25}
 .ny-btn:hover{background:#a93226;color:#fff;text-decoration:none}
 .ny-btn .ny-tree{width:28px;height:29px;flex:0 0 auto}
 .ny-btn.ny-sm{padding:11px 20px;font-size:15px}
@@ -445,7 +445,8 @@ body #hr-widget a.button-primary.big{border-radius:999px!important;padding-left:
 .ny-accent{display:block;font-weight:700;color:var(--ny-gold);font-size:clamp(20px,2.4vw,30px);line-height:1.2;margin:clamp(26px,3vw,38px) 0 clamp(28px,3.4vw,40px);letter-spacing:-.01em}
 
 /* ---- Вступление: 2 колонки ---- */
-.ny-intro{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,4.5vw,64px);align-items:center;margin-top:clamp(28px,3.6vw,44px)}
+.ny-intro{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(30px,4.5vw,64px);align-items:center;margin-top:clamp(28px,3.6vw,44px)}
+.ny-intro>*{min-width:0}
 .ny-intro-text p{font-size:clamp(17px,1.4vw,19px);line-height:1.65;margin-bottom:18px}
 /* Карусель */
 .ny-carousel{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:2/3;border:2px solid var(--ny-gold);box-shadow:0 14px 40px rgba(0,0,0,.35)}
@@ -508,7 +509,7 @@ body #hr-widget a.button-primary.big{border-radius:999px!important;padding-left:
 
 /* ---- Адаптив раздела ---- */
 @media(max-width:860px){
-  .ny-intro{grid-template-columns:1fr;gap:24px}
+  .ny-intro{grid-template-columns:minmax(0,1fr);gap:24px}
   .ny-carousel{max-width:360px;margin:0 auto;width:100%}
   .ny-cards{grid-template-columns:1fr;max-width:420px}
   .ny-plots{grid-template-columns:1fr;max-width:460px}
